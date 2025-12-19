@@ -31,8 +31,8 @@ begin
         -- Multiply x by bitwise NOT(x) (both N-bit), get 2N-bit product
         full_prod := x * (not x);
 
-        -- Truncate to N bits (keep LSBs => mod 2^N)
-        x <= full_prod(full_prod'high-2 downto full_prod'high-9);
+        -- Discard the 2 MSBs of the 2N-bit product, then take the next N MSBs
+        x <= full_prod(full_prod'high-2 downto full_prod'high-(N+1));
       end if;
     end if;
   end process;

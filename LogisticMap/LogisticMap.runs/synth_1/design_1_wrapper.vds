@@ -1,0 +1,343 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Fri Dec 19 17:52:53 2025
+# Process ID         : 12812
+# Current directory  : C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.runs/synth_1
+# Command line       : vivado.exe -log design_1_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
+# Log file           : C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.runs/synth_1/design_1_wrapper.vds
+# Journal file       : C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.runs/synth_1\vivado.jou
+# Running On         : arthur-desktop
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : Intel(R) Core(TM) i5-10500 CPU @ 3.10GHz
+# CPU Frequency      : 3096 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 12
+# Host memory        : 16880 MB
+# Swap memory        : 3087 MB
+# Total Virtual      : 19967 MB
+# Available Virtual  : 8613 MB
+#-----------------------------------------------------------
+source design_1_wrapper.tcl -notrace
+create_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 546.059 ; gain = 230.527
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/arthu/minimalv2/ip_repo/logmapAXI_1_0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/AMDDesignTools/2025.2/Vivado/data/ip'.
+Command: synth_design -top design_1_wrapper -part xc7z007sclg225-1 -flatten_hierarchy none -directive PowerOptimized_high -fsm_extraction off -max_bram 0 -max_uram 0 -max_dsp 0 -max_bram_cascade_height 0 -max_uram_cascade_height 0
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z007s'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z007s'
+INFO: [Vivado_Tcl 4-288] User specified maximum number of block RAM allowed in design is 0
+INFO: [Vivado_Tcl 4-551] User specified maximum number of Ultra RAM blocks allowed in design is 0
+INFO: [Vivado_Tcl 4-287] User specified maximum number of block DSP allowed in design is 0
+INFO: [Vivado_Tcl 4-549] User specified maximum number of BRAM that can be cascaded is 0
+INFO: [Vivado_Tcl 4-550] User specified maximum number of URAM that can be cascaded is 0
+INFO: [Device 21-403] Loading part xc7z007sclg225-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 6896
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1329.801 ; gain = 539.449
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'design_1_wrapper' [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:41]
+INFO: [Synth 8-3491] module 'design_1' declared at 'c:/Users/arthu/minimalv2/LogisticMap/LogisticMap.gen/sources_1/bd/design_1/synth/design_1.vhd:15' bound to instance 'design_1_i' of component 'design_1' [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:68]
+INFO: [Synth 8-638] synthesizing module 'design_1' [c:/Users/arthu/minimalv2/LogisticMap/LogisticMap.gen/sources_1/bd/design_1/synth/design_1.vhd:45]
+INFO: [Synth 8-3491] module 'design_1_axi_smc_0' declared at 'C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.runs/synth_1/.Xil/Vivado-12812-arthur-desktop/realtime/design_1_axi_smc_0_stub.vhdl:6' bound to instance 'axi_smc' of component 'design_1_axi_smc_0' [c:/Users/arthu/minimalv2/LogisticMap/LogisticMap.gen/sources_1/bd/design_1/synth/design_1.vhd:307]
+INFO: [Synth 8-638] synthesizing module 'design_1_axi_smc_0' [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.runs/synth_1/.Xil/Vivado-12812-arthur-desktop/realtime/design_1_axi_smc_0_stub.vhdl:77]
+INFO: [Synth 8-3491] module 'design_1_logmapAXI_0_0' declared at 'C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.runs/synth_1/.Xil/Vivado-12812-arthur-desktop/realtime/design_1_logmapAXI_0_0_stub.vhdl:6' bound to instance 'logmapAXI_0' of component 'design_1_logmapAXI_0_0' [c:/Users/arthu/minimalv2/LogisticMap/LogisticMap.gen/sources_1/bd/design_1/synth/design_1.vhd:369]
+INFO: [Synth 8-638] synthesizing module 'design_1_logmapAXI_0_0' [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.runs/synth_1/.Xil/Vivado-12812-arthur-desktop/realtime/design_1_logmapAXI_0_0_stub.vhdl:41]
+INFO: [Synth 8-3491] module 'design_1_processing_system7_0_1' declared at 'C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.runs/synth_1/.Xil/Vivado-12812-arthur-desktop/realtime/design_1_processing_system7_0_1_stub.vhdl:6' bound to instance 'processing_system7_0' of component 'design_1_processing_system7_0_1' [c:/Users/arthu/minimalv2/LogisticMap/LogisticMap.gen/sources_1/bd/design_1/synth/design_1.vhd:393]
+INFO: [Synth 8-638] synthesizing module 'design_1_processing_system7_0_1' [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.runs/synth_1/.Xil/Vivado-12812-arthur-desktop/realtime/design_1_processing_system7_0_1_stub.vhdl:80]
+INFO: [Synth 8-3491] module 'design_1_rst_ps7_0_50M_0' declared at 'C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.runs/synth_1/.Xil/Vivado-12812-arthur-desktop/realtime/design_1_rst_ps7_0_50M_0_stub.vhdl:6' bound to instance 'rst_ps7_0_50M' of component 'design_1_rst_ps7_0_50M_0' [c:/Users/arthu/minimalv2/LogisticMap/LogisticMap.gen/sources_1/bd/design_1/synth/design_1.vhd:458]
+INFO: [Synth 8-638] synthesizing module 'design_1_rst_ps7_0_50M_0' [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.runs/synth_1/.Xil/Vivado-12812-arthur-desktop/realtime/design_1_rst_ps7_0_50M_0_stub.vhdl:28]
+INFO: [Synth 8-256] done synthesizing module 'design_1' (0#1) [c:/Users/arthu/minimalv2/LogisticMap/LogisticMap.gen/sources_1/bd/design_1/synth/design_1.vhd:45]
+INFO: [Synth 8-256] done synthesizing module 'design_1_wrapper' (0#1) [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:41]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1455.738 ; gain = 665.387
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1455.738 ; gain = 665.387
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1455.738 ; gain = 665.387
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1455.738 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/arthu/minimalv2/LogisticMap/LogisticMap.gen/sources_1/bd/design_1/ip/design_1_logmapAXI_0_0/design_1_logmapAXI_0_0/design_1_logmapAXI_0_0_in_context.xdc] for cell 'design_1_i/logmapAXI_0'
+Finished Parsing XDC File [c:/Users/arthu/minimalv2/LogisticMap/LogisticMap.gen/sources_1/bd/design_1/ip/design_1_logmapAXI_0_0/design_1_logmapAXI_0_0/design_1_logmapAXI_0_0_in_context.xdc] for cell 'design_1_i/logmapAXI_0'
+Parsing XDC File [c:/Users/arthu/minimalv2/LogisticMap/LogisticMap.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc] for cell 'design_1_i/processing_system7_0'
+Finished Parsing XDC File [c:/Users/arthu/minimalv2/LogisticMap/LogisticMap.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc] for cell 'design_1_i/processing_system7_0'
+Parsing XDC File [c:/Users/arthu/minimalv2/LogisticMap/LogisticMap.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/design_1_axi_smc_0/design_1_axi_smc_0_in_context.xdc] for cell 'design_1_i/axi_smc'
+Finished Parsing XDC File [c:/Users/arthu/minimalv2/LogisticMap/LogisticMap.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/design_1_axi_smc_0/design_1_axi_smc_0_in_context.xdc] for cell 'design_1_i/axi_smc'
+Parsing XDC File [c:/Users/arthu/minimalv2/LogisticMap/LogisticMap.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0_in_context.xdc] for cell 'design_1_i/rst_ps7_0_50M'
+Finished Parsing XDC File [c:/Users/arthu/minimalv2/LogisticMap/LogisticMap.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0_in_context.xdc] for cell 'design_1_i/rst_ps7_0_50M'
+Parsing XDC File [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_LEDs.xdc]
+WARNING: [Vivado 12-584] No ports matched 'pl_led_r_tri_o'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_LEDs.xdc:6]
+WARNING: [Vivado 12-584] No ports matched 'pl_led_r_tri_o'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_LEDs.xdc:7]
+WARNING: [Vivado 12-584] No ports matched 'pl_led_g_tri_o'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_LEDs.xdc:9]
+WARNING: [Vivado 12-584] No ports matched 'pl_led_g_tri_o'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_LEDs.xdc:10]
+Finished Parsing XDC File [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_LEDs.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_LEDs.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/design_1_wrapper_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+Parsing XDC File [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_mic.xdc]
+WARNING: [Vivado 12-508] No pins matched '<TBD>/clk_wiz_0/U0/mmcm_adv_inst/CLKOUT0'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_mic.xdc:68]
+WARNING: [Vivado 12-627] No clocks matched 'clk_fpga_0'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_mic.xdc:74]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_mic.xdc:74]
+WARNING: [Vivado 12-627] No clocks matched 'clk_fpga_2'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_mic.xdc:74]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_mic.xdc:74]
+CRITICAL WARNING: [Vivado 12-4739] set_clock_groups:No valid object(s) found for '-group [get_clocks clk_fpga_0]'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_mic.xdc:74]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+CRITICAL WARNING: [Vivado 12-4739] set_clock_groups:No valid object(s) found for '-group '. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_mic.xdc:74]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+CRITICAL WARNING: [Vivado 12-4739] set_clock_groups:No valid object(s) found for '-group [get_clocks clk_fpga_2]'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_mic.xdc:74]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+CRITICAL WARNING: [Vivado 12-4739] set_clock_groups:No valid object(s) found for '-group '. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_mic.xdc:74]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+Finished Parsing XDC File [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_mic.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_mic.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/design_1_wrapper_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+Parsing XDC File [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc]
+WARNING: [Vivado 12-584] No ports matched 'ARD_DAT0'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:5]
+WARNING: [Vivado 12-584] No ports matched 'ARD_DAT0'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:6]
+WARNING: [Vivado 12-584] No ports matched 'ARD_DAT1'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:9]
+WARNING: [Vivado 12-584] No ports matched 'ARD_DAT1'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:10]
+WARNING: [Vivado 12-584] No ports matched 'ARD_DAT2'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:13]
+WARNING: [Vivado 12-584] No ports matched 'ARD_DAT2'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:14]
+WARNING: [Vivado 12-584] No ports matched 'ARD_DAT3'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:17]
+WARNING: [Vivado 12-584] No ports matched 'ARD_DAT3'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:18]
+WARNING: [Vivado 12-584] No ports matched 'ARD_DAT4'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:21]
+WARNING: [Vivado 12-584] No ports matched 'ARD_DAT4'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:22]
+WARNING: [Vivado 12-584] No ports matched 'ARD_DAT5'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:25]
+WARNING: [Vivado 12-584] No ports matched 'ARD_DAT5'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:26]
+WARNING: [Vivado 12-584] No ports matched 'ARD_DAT6'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:29]
+WARNING: [Vivado 12-584] No ports matched 'ARD_DAT6'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:30]
+WARNING: [Vivado 12-584] No ports matched 'ARD_DAT7'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:33]
+WARNING: [Vivado 12-584] No ports matched 'ARD_DAT7'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:34]
+WARNING: [Vivado 12-584] No ports matched 'ARD_DAT8'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:40]
+WARNING: [Vivado 12-584] No ports matched 'ARD_DAT8'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:41]
+WARNING: [Vivado 12-584] No ports matched 'ARD_DAT9'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:44]
+WARNING: [Vivado 12-584] No ports matched 'ARD_DAT9'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:45]
+WARNING: [Vivado 12-584] No ports matched 'ARD_DAT10'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:48]
+WARNING: [Vivado 12-584] No ports matched 'ARD_DAT10'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:49]
+WARNING: [Vivado 12-584] No ports matched 'ARD_DAT11'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:52]
+WARNING: [Vivado 12-584] No ports matched 'ARD_DAT11'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:53]
+WARNING: [Vivado 12-584] No ports matched 'ARD_DAT12'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:56]
+WARNING: [Vivado 12-584] No ports matched 'ARD_DAT12'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:57]
+WARNING: [Vivado 12-584] No ports matched 'ARD_DAT13'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:60]
+WARNING: [Vivado 12-584] No ports matched 'ARD_DAT13'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:61]
+WARNING: [Vivado 12-584] No ports matched 'ARD_ADDR0'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:67]
+WARNING: [Vivado 12-584] No ports matched 'ARD_ADDR0'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:68]
+WARNING: [Vivado 12-584] No ports matched 'ARD_ADDR1'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:71]
+WARNING: [Vivado 12-584] No ports matched 'ARD_ADDR1'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:72]
+WARNING: [Vivado 12-584] No ports matched 'ARD_ADDR2'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:75]
+WARNING: [Vivado 12-584] No ports matched 'ARD_ADDR2'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:76]
+WARNING: [Vivado 12-584] No ports matched 'PL_LED_G'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:81]
+WARNING: [Vivado 12-584] No ports matched 'PL_LED_G'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:82]
+WARNING: [Vivado 12-584] No ports matched 'PL_LED_R'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:87]
+WARNING: [Vivado 12-584] No ports matched 'PL_LED_R'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:88]
+WARNING: [Vivado 12-584] No ports matched 'iic_rtl_sda_io'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:102]
+WARNING: [Vivado 12-584] No ports matched 'iic_rtl_sda_io'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:103]
+WARNING: [Vivado 12-584] No ports matched 'iic_rtl_scl_io'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:108]
+WARNING: [Vivado 12-584] No ports matched 'iic_rtl_scl_io'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:109]
+WARNING: [Vivado 12-584] No ports matched 'PMOD1_PIN1'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:114]
+WARNING: [Vivado 12-584] No ports matched 'PMOD1_PIN1'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:115]
+WARNING: [Vivado 12-584] No ports matched 'PMOD1_PIN2'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:117]
+WARNING: [Vivado 12-584] No ports matched 'PMOD1_PIN2'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:118]
+WARNING: [Vivado 12-584] No ports matched 'PMOD1_PIN3'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:120]
+WARNING: [Vivado 12-584] No ports matched 'PMOD1_PIN3'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:121]
+WARNING: [Vivado 12-584] No ports matched 'PMOD1_PIN4'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:123]
+WARNING: [Vivado 12-584] No ports matched 'PMOD1_PIN4'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:124]
+WARNING: [Vivado 12-584] No ports matched 'PMOD1_PIN7'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:126]
+WARNING: [Vivado 12-584] No ports matched 'PMOD1_PIN7'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:127]
+WARNING: [Vivado 12-584] No ports matched 'PMOD1_PIN8'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:129]
+WARNING: [Vivado 12-584] No ports matched 'PMOD1_PIN8'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:130]
+WARNING: [Vivado 12-584] No ports matched 'PMOD1_PIN9'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:132]
+WARNING: [Vivado 12-584] No ports matched 'PMOD1_PIN9'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:133]
+WARNING: [Vivado 12-584] No ports matched 'PMOD1_PIN10'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:135]
+WARNING: [Vivado 12-584] No ports matched 'PMOD1_PIN10'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:136]
+WARNING: [Vivado 12-584] No ports matched 'PMOD2_PIN1'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:141]
+WARNING: [Vivado 12-584] No ports matched 'PMOD2_PIN1'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:142]
+WARNING: [Vivado 12-584] No ports matched 'PMOD2_PIN2'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:144]
+WARNING: [Vivado 12-584] No ports matched 'PMOD2_PIN2'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:145]
+WARNING: [Vivado 12-584] No ports matched 'PMOD2_PIN3'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:147]
+WARNING: [Vivado 12-584] No ports matched 'PMOD2_PIN3'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:148]
+WARNING: [Vivado 12-584] No ports matched 'PMOD2_PIN4'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:150]
+WARNING: [Vivado 12-584] No ports matched 'PMOD2_PIN4'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:151]
+WARNING: [Vivado 12-584] No ports matched 'PMOD2_PIN7'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:153]
+WARNING: [Vivado 12-584] No ports matched 'PMOD2_PIN7'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:154]
+WARNING: [Vivado 12-584] No ports matched 'PMOD2_PIN8'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:156]
+WARNING: [Vivado 12-584] No ports matched 'PMOD2_PIN8'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:157]
+WARNING: [Vivado 12-584] No ports matched 'PMOD2_PIN9'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:159]
+WARNING: [Vivado 12-584] No ports matched 'PMOD2_PIN9'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:160]
+WARNING: [Vivado 12-584] No ports matched 'PMOD2_PIN10'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:162]
+WARNING: [Vivado 12-584] No ports matched 'PMOD2_PIN10'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:163]
+WARNING: [Vivado 12-584] No ports matched 'AUDIO_CLK'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:168]
+WARNING: [Vivado 12-584] No ports matched 'AUDIO_CLK'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:169]
+WARNING: [Vivado 12-584] No ports matched 'AUDIO_DAT'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:171]
+WARNING: [Vivado 12-584] No ports matched 'AUDIO_DAT'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:172]
+WARNING: [Vivado 12-584] No ports matched 'WL_SDIO_CLK'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:177]
+WARNING: [Vivado 12-584] No ports matched 'WL_SDIO_CLK'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:178]
+WARNING: [Vivado 12-584] No ports matched 'WL_SDIO_CMD'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:180]
+WARNING: [Vivado 12-584] No ports matched 'WL_SDIO_CMD'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:181]
+WARNING: [Vivado 12-584] No ports matched 'WL_SDIO_DAT[0]'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:183]
+WARNING: [Vivado 12-584] No ports matched 'WL_SDIO_DAT[0]'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:184]
+WARNING: [Vivado 12-584] No ports matched 'WL_SDIO_DAT[1]'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:186]
+WARNING: [Vivado 12-584] No ports matched 'WL_SDIO_DAT[1]'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:187]
+WARNING: [Vivado 12-584] No ports matched 'WL_SDIO_DAT[2]'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:189]
+WARNING: [Vivado 12-584] No ports matched 'WL_SDIO_DAT[2]'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:190]
+WARNING: [Vivado 12-584] No ports matched 'WL_SDIO_DAT[3]'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:192]
+WARNING: [Vivado 12-584] No ports matched 'WL_SDIO_DAT[3]'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:193]
+WARNING: [Vivado 12-584] No ports matched 'WL_REG_ON'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:195]
+WARNING: [Vivado 12-584] No ports matched 'WL_REG_ON'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:196]
+WARNING: [Vivado 12-584] No ports matched 'WL_HOST_WAKE'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:198]
+WARNING: [Vivado 12-584] No ports matched 'WL_HOST_WAKE'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:199]
+WARNING: [Vivado 12-584] No ports matched 'BT_TXD_OUT'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:201]
+WARNING: [Vivado 12-584] No ports matched 'BT_TXD_OUT'. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:202]
+INFO: [Common 17-14] Message 'Vivado 12-584' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc:202]
+Finished Parsing XDC File [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/constrs_1/imports/MINIZED/minized_pins.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/design_1_wrapper_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+Parsing XDC File [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1455.738 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 1455.738 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1455.738 ; gain = 665.387
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z007sclg225-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1455.738 ; gain = 665.387
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1455.738 ; gain = 665.387
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1455.738 ; gain = 665.387
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 66 (col length:40)
+BRAMs: 100 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1475.328 ; gain = 684.977
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1643.441 ; gain = 853.090
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1643.516 ; gain = 853.164
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1653.570 ; gain = 863.219
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 1902.973 ; gain = 1112.621
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 1902.973 ; gain = 1112.621
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 1902.973 ; gain = 1112.621
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------------------------+----------+
+|      |BlackBox name                   |Instances |
++------+--------------------------------+----------+
+|1     |design_1_axi_smc_0              |         1|
+|2     |design_1_logmapAXI_0_0          |         1|
+|3     |design_1_processing_system7_0_1 |         1|
+|4     |design_1_rst_ps7_0_50M_0        |         1|
++------+--------------------------------+----------+
+
+Report Cell Usage: 
++------+-------------------------------------+------+
+|      |Cell                                 |Count |
++------+-------------------------------------+------+
+|1     |design_1_axi_smc_0_bbox              |     1|
+|2     |design_1_logmapAXI_0_0_bbox          |     1|
+|3     |design_1_processing_system7_0_1_bbox |     1|
+|4     |design_1_rst_ps7_0_50M_0_bbox        |     1|
++------+-------------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 1902.973 ; gain = 1112.621
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:28 . Memory (MB): peak = 1902.973 ; gain = 1112.621
+Synthesis Optimization Complete : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 1902.973 ; gain = 1112.621
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1902.973 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1906.273 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: d3188057
+INFO: [Common 17-83] Releasing license: Synthesis
+36 Infos, 106 Warnings, 4 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 1910.273 ; gain = 1349.363
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+INFO: [Common 17-1381] The checkpoint 'C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.runs/synth_1/design_1_wrapper.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Dec 19 17:53:43 2025...

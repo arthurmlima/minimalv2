@@ -20,13 +20,13 @@ static inline uint8_t u8_bitwise_not(uint8_t x){ return (uint8_t)(~x);}
 
 // Example usage
 int main(void) {
-    uint8_t examples[] = {0u, 2u, 0x80u, 0x40u, 0xFFu};
+    uint8_t examples[] = {0x5AU, 2u, 0x80u, 0x40u, 0xFFu};
     size_t n = sizeof(examples) / sizeof(examples[0]);
 
     printf("Testing unsigned_to_fraction() with example inputs:\n");
-    uint8_t val = 187u;
+    uint8_t val = 128u;
     printf("Initial value: %f\n", unsigned_to_fraction(val));
-    for (size_t i = 0; i < n; ++i) {
+    for (size_t i = 0; i < 30; ++i) {
         double logistic = 4.0 * unsigned_to_fraction(val) * (1.0 - unsigned_to_fraction(val));
         val = mul_with_not_keep_8_msn(val);
 
