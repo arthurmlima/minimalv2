@@ -1,0 +1,191 @@
+Time resolution is 1 ps
+Error: Seed load mismatch. seed=128 got=0
+Time: 45 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=128 iter=2 expected=128 got=254
+Time: 65 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=128 iter=3 expected=128 got=3
+Time: 75 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=128 iter=4 expected=128 got=11
+Time: 85 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=128 iter=5 expected=128 got=41
+Time: 95 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=128 iter=6 expected=128 got=137
+Time: 105 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=128 iter=7 expected=128 got=252
+Time: 115 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=128 iter=8 expected=128 got=11
+Time: 125 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=128 iter=9 expected=128 got=41
+Time: 135 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=128 iter=10 expected=128 got=137
+Time: 145 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=128 iter=11 expected=128 got=252
+Time: 155 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=128 iter=12 expected=128 got=11
+Time: 165 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=128 iter=13 expected=128 got=41
+Time: 175 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=128 iter=14 expected=128 got=137
+Time: 185 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=128 iter=15 expected=128 got=252
+Time: 195 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=128 iter=16 expected=128 got=11
+Time: 205 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=128 iter=17 expected=128 got=41
+Time: 215 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=128 iter=18 expected=128 got=137
+Time: 225 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=128 iter=19 expected=128 got=252
+Time: 235 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=128 iter=20 expected=128 got=11
+Time: 245 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Note: OK seed=128 final=11
+Time: 245 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Seed load mismatch. seed=1 got=41
+Time: 265 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=1 iter=1 expected=254 got=1
+Time: 275 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=1 iter=2 expected=254 got=3
+Time: 285 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=1 iter=3 expected=254 got=11
+Time: 295 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=1 iter=4 expected=254 got=41
+Time: 305 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=1 iter=5 expected=254 got=137
+Time: 315 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=1 iter=6 expected=254 got=252
+Time: 325 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=1 iter=7 expected=254 got=11
+Time: 335 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=1 iter=8 expected=254 got=41
+Time: 345 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=1 iter=9 expected=254 got=137
+Time: 355 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=1 iter=10 expected=254 got=252
+Time: 365 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=1 iter=11 expected=254 got=11
+Time: 375 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=1 iter=12 expected=254 got=41
+Time: 385 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=1 iter=13 expected=254 got=137
+Time: 395 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=1 iter=14 expected=254 got=252
+Time: 405 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=1 iter=15 expected=254 got=11
+Time: 415 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=1 iter=16 expected=254 got=41
+Time: 425 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=1 iter=17 expected=254 got=137
+Time: 435 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=1 iter=18 expected=254 got=252
+Time: 445 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=1 iter=19 expected=254 got=11
+Time: 455 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=1 iter=20 expected=254 got=41
+Time: 465 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Note: OK seed=1 final=41
+Time: 465 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Seed load mismatch. seed=187 got=137
+Time: 485 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=187 iter=1 expected=172 got=187
+Time: 495 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=187 iter=2 expected=196 got=198
+Time: 505 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=187 iter=3 expected=44 got=176
+Time: 515 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=187 iter=4 expected=68 got=217
+Time: 525 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=187 iter=5 expected=172 got=128
+Time: 535 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=187 iter=6 expected=196 got=254
+Time: 545 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=187 iter=7 expected=44 got=3
+Time: 555 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=187 iter=8 expected=68 got=11
+Time: 565 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=187 iter=9 expected=172 got=41
+Time: 575 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=187 iter=10 expected=196 got=137
+Time: 585 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=187 iter=11 expected=44 got=252
+Time: 595 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=187 iter=12 expected=68 got=11
+Time: 605 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=187 iter=13 expected=172 got=41
+Time: 615 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=187 iter=14 expected=196 got=137
+Time: 625 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=187 iter=15 expected=44 got=252
+Time: 635 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=187 iter=16 expected=68 got=11
+Time: 645 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=187 iter=17 expected=172 got=41
+Time: 655 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=187 iter=18 expected=196 got=137
+Time: 665 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=187 iter=19 expected=44 got=252
+Time: 675 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=187 iter=20 expected=68 got=11
+Time: 685 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Note: OK seed=187 final=11
+Time: 685 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Seed load mismatch. seed=3 got=41
+Time: 705 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=3 iter=1 expected=244 got=3
+Time: 715 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=3 iter=2 expected=124 got=11
+Time: 725 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=3 iter=3 expected=116 got=41
+Time: 735 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=3 iter=4 expected=252 got=137
+Time: 745 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=3 iter=5 expected=244 got=252
+Time: 755 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=3 iter=6 expected=124 got=11
+Time: 765 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=3 iter=7 expected=116 got=41
+Time: 775 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=3 iter=8 expected=252 got=137
+Time: 785 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=3 iter=9 expected=244 got=252
+Time: 795 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=3 iter=10 expected=124 got=11
+Time: 805 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=3 iter=11 expected=116 got=41
+Time: 815 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=3 iter=12 expected=252 got=137
+Time: 825 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=3 iter=13 expected=244 got=252
+Time: 835 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=3 iter=14 expected=124 got=11
+Time: 845 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=3 iter=15 expected=116 got=41
+Time: 855 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=3 iter=16 expected=252 got=137
+Time: 865 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=3 iter=17 expected=244 got=252
+Time: 875 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=3 iter=18 expected=124 got=11
+Time: 885 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=3 iter=19 expected=116 got=41
+Time: 895 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=3 iter=20 expected=252 got=137
+Time: 905 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Note: OK seed=3 final=137
+Time: 905 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Seed load mismatch. seed=187 got=252
+Time: 925 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=187 iter=1 expected=172 got=187
+Time: 935 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=187 iter=2 expected=196 got=198
+Time: 945 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=187 iter=3 expected=44 got=176
+Time: 955 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=187 iter=4 expected=68 got=217
+Time: 965 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=187 iter=5 expected=172 got=128
+Time: 975 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=187 iter=6 expected=196 got=254
+Time: 985 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd
+Error: Mismatch at seed=187 iter=7 expected=44 got=3
+Time: 995 ns  Iteration: 2  Process: /tb_iter_mult_not/stim_proc  File: C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd

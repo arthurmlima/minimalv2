@@ -1,0 +1,7 @@
+Running: xsim.dir/iter_mult_not_behav/xsimk.exe -simmode gui -wdb iter_mult_not_behav.wdb -simrunnum 0 -socket 53332
+Design successfully loaded
+Design Loading Memory Usage: 10764 KB (Peak: 10764 KB)
+Design Loading CPU Usage: 61 ms
+Simulation completed
+Simulation Memory Usage: 11608 KB (Peak: 11608 KB)
+Simulation CPU Usage: 77 ms
