@@ -1,7 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"../../../../LogisticMap.srcs/sources_1/new/tradlogm.vhd" \
-"../../../../LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd" \
-
-# Do not sort compile order
-nosort

@@ -147,7 +147,7 @@ int main(void)
 
     /* 2) Load seed using polling: write seed, assert load_seed until x_out == seed */
     xil_printf("\r\n[2] Load seed (poll x_out -> seed)\r\n");
-    uint8_t seed = 128u;
+    uint8_t seed = 187u;
 
     logmap_set_seed_u8(seed);
     logmap_set_load_seed(1);

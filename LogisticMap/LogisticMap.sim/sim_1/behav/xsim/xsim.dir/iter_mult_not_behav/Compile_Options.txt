@@ -1,1 +1,0 @@
---incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" -L "xpm" --snapshot "iter_mult_not_behav" "xil_defaultlib.iter_mult_not" -log "elaborate.log" 

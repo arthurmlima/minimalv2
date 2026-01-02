@@ -904,8 +904,18 @@
                 #size-cells = <0x1>;
                 firmware-name = "design_1_wrapper.bit.bin";
 
-                clocking0: clocking0 {
+                clocking1: clocking1 {
                         phandle = <0x4c>;
+                        compatible = "xlnx,fclk";
+                        assigned-clocks = <&clkc 0x10>;
+                        assigned-clock-rates = <0x5f5e100>;
+                        #clock-cells = <0x0>;
+                        clock-output-names = "fabric_clk";
+                        clocks = <&clkc 0x10>;
+                };
+
+                clocking0: clocking0 {
+                        phandle = <0x4d>;
                         compatible = "xlnx,fclk";
                         assigned-clocks = <&clkc 0xf>;
                         assigned-clock-rates = <0x2faf080>;
@@ -916,6 +926,7 @@
 
                 logmapAXI_0: logmapAXI@40000000 {
                         phandle = <0x5>;
+                        xlnx,n-s00 = <0x8>;
                         xlnx,s00-axi-data-width = <0x20>;
                         compatible = "xlnx,logmapAXI-1.0";
                         status = "okay";
@@ -1046,6 +1057,7 @@
                 ps7_m_axi_gp0 = "/axi/ps7_m_axi_gp@40000000";
                 ps7_qspi_linear_0 = "/axi/ps7_qspi_linear@fc000000";
                 amba_pl = "/amba_pl";
+                clocking1 = "/amba_pl/clocking1";
                 clocking0 = "/amba_pl/clocking0";
                 logmapAXI_0 = "/amba_pl/logmapAXI@40000000";
                 ps7_qspi_linear_0_memory = "/memory@fc000000";

@@ -384,7 +384,7 @@
                 };
 
                 ttc1: timer@f8001004 {
-                        phandle = <0x4d>;
+                        phandle = <0x4e>;
                         reg = <0xf8001004 0xffc>;
                         clocks = <&clkc 0x6>;
                         compatible = "cdns,ttc";
@@ -394,7 +394,7 @@
                 };
 
                 ttc2: timer@f8001008 {
-                        phandle = <0x4e>;
+                        phandle = <0x4f>;
                         reg = <0xf8001008 0xff8>;
                         clocks = <&clkc 0x6>;
                         compatible = "cdns,ttc";
@@ -413,7 +413,7 @@
                 };
 
                 ttc4: timer@f8002004 {
-                        phandle = <0x4f>;
+                        phandle = <0x50>;
                         reg = <0xf8002004 0xffc>;
                         clocks = <&clkc 0x6>;
                         compatible = "cdns,ttc";
@@ -423,7 +423,7 @@
                 };
 
                 ttc5: timer@f8002008 {
-                        phandle = <0x50>;
+                        phandle = <0x51>;
                         reg = <0xf8002008 0xff8>;
                         clocks = <&clkc 0x6>;
                         compatible = "cdns,ttc";
@@ -709,8 +709,18 @@
                 #size-cells = <0x1>;
                 firmware-name = "design_1_wrapper.bit.bin";
 
-                clocking0: clocking0 {
+                clocking1: clocking1 {
                         phandle = <0x4c>;
+                        compatible = "xlnx,fclk";
+                        assigned-clocks = <&clkc 0x10>;
+                        assigned-clock-rates = <0x5f5e100>;
+                        #clock-cells = <0x0>;
+                        clock-output-names = "fabric_clk";
+                        clocks = <&clkc 0x10>;
+                };
+
+                clocking0: clocking0 {
+                        phandle = <0x4d>;
                         compatible = "xlnx,fclk";
                         assigned-clocks = <&clkc 0xf>;
                         assigned-clock-rates = <0x2faf080>;
@@ -721,6 +731,7 @@
 
                 logmapAXI_0: logmapAXI@40000000 {
                         phandle = <0x5>;
+                        xlnx,n-s00 = <0x8>;
                         xlnx,s00-axi-data-width = <0x20>;
                         compatible = "xlnx,logmapAXI-1.0";
                         status = "okay";
@@ -829,6 +840,7 @@
                 ps7_afi_3 = "/axi/ps7_afi@f800b000";
                 ps7_qspi_linear_0 = "/axi/ps7_qspi_linear@fc000000";
                 amba_pl = "/amba_pl";
+                clocking1 = "/amba_pl/clocking1";
                 clocking0 = "/amba_pl/clocking0";
                 logmapAXI_0 = "/amba_pl/logmapAXI@40000000";
                 ps7_qspi_linear_0_memory = "/memory@fc000000";

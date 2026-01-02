@@ -1,6 +1,3 @@
--- Testbench for iter_mult_not
--- Assumes VHDL-2008 (works in Vivado/ModelSim/etc.)
-
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
@@ -9,7 +6,7 @@ entity tb_iter_mult_not is
 end entity;
 
 architecture sim of tb_iter_mult_not is
-  constant N : positive := 8;
+  constant N : positive := 64;
 
   signal clk       : std_logic := '0';
   signal rst       : std_logic := '0';

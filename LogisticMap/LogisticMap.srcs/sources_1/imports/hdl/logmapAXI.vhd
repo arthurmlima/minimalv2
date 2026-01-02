@@ -5,17 +5,23 @@ use ieee.numeric_std.all;
 entity logmapAXI is
 	generic (
 		-- Users to add parameters here
-
+        N_S00 : integer := 64;
 		-- User parameters ends
 		-- Do not modify the parameters beyond this line
 
 
 		-- Parameters of Axi Slave Bus Interface S00_AXI
-		C_S00_AXI_DATA_WIDTH	: integer	:= 32;
-		C_S00_AXI_ADDR_WIDTH	: integer	:= 5
+		C_S00_AXI_DATA_WIDTH	: integer	:= 64;
+		C_S00_AXI_ADDR_WIDTH	: integer	:= 10
 	);
 	port (
 		-- Users to add ports here
+		s00_x_out      : out std_logic_vector(N_S00-1 downto 0);
+		s00_seed       : out std_logic_vector(N_S00-1 downto 0);
+		s00_clk        : out std_logic;
+		s00_rst        : out std_logic;
+		s00_load_seed  : out std_logic;
+		s00_en         : out std_logic;
 
 		-- User ports ends
 		-- Do not modify the ports beyond this line
@@ -51,10 +57,17 @@ architecture arch_imp of logmapAXI is
 	-- component declaration
 	component logmapAXI_slave_lite_v1_0_S00_AXI is
 		generic (
-		C_S_AXI_DATA_WIDTH	: integer	:= 32;
-		C_S_AXI_ADDR_WIDTH	: integer	:= 5
+		N : integer := 64;
+		C_S_AXI_DATA_WIDTH	: integer	:= 64;
+		C_S_AXI_ADDR_WIDTH	: integer	:= 10
 		);
 		port (
+	    p_x_out      : out std_logic_vector(N-1 downto 0);
+		p_seed       : out std_logic_vector(N-1 downto 0);
+		p_clk        : out std_logic;
+		p_rst        : out std_logic;
+		p_load_seed  : out std_logic;
+		p_en         : out std_logic;
 		S_AXI_ACLK	: in std_logic;
 		S_AXI_ARESETN	: in std_logic;
 		S_AXI_AWADDR	: in std_logic_vector(C_S_AXI_ADDR_WIDTH-1 downto 0);
@@ -84,11 +97,20 @@ begin
 -- Instantiation of Axi Bus Interface S00_AXI
 logmapAXI_slave_lite_v1_0_S00_AXI_inst : logmapAXI_slave_lite_v1_0_S00_AXI
 	generic map (
+	    N => N_S00,
 		C_S_AXI_DATA_WIDTH	=> C_S00_AXI_DATA_WIDTH,
 		C_S_AXI_ADDR_WIDTH	=> C_S00_AXI_ADDR_WIDTH
 	)
 	port map (
-		S_AXI_ACLK	=> s00_axi_aclk,
+		p_x_out   =>	     s00_x_out,    
+		p_seed       =>		 s00_seed,     
+		p_clk        =>		 s00_clk,      
+		p_rst        =>		 s00_rst,      
+		p_load_seed  =>		 s00_load_seed,
+		p_en         =>		 s00_en,       
+		
+		
+		S_AXI_ACLK	    => s00_axi_aclk,
 		S_AXI_ARESETN	=> s00_axi_aresetn,
 		S_AXI_AWADDR	=> s00_axi_awaddr,
 		S_AXI_AWPROT	=> s00_axi_awprot,

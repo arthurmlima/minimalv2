@@ -1,4 +1,0 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sources_1/new/tradlogm.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'iter_mult_not'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sim_1/new/tb_tradlogm.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'tb_iter_mult_not'

@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xA329B3BE224A05C8",
+      "boundary_crc": "0xA329B3BE84D384A5",
       "device": "xc7z007sclg225-1",
       "gen_directory": "../../../../LogisticMap.gen/sources_1/bd/design_1",
       "name": "design_1",
@@ -14,7 +14,9 @@
       "logmapAXI_0": "",
       "processing_system7_0": "",
       "axi_smc": "",
-      "rst_ps7_0_50M": ""
+      "rst_ps7_0_50M": "",
+      "ila_0": "",
+      "xlconstant_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -206,6 +208,17 @@
         "xci_path": "ip\\design_1_logmapAXI_0_0\\design_1_logmapAXI_0_0.xci",
         "inst_hier_path": "logmapAXI_0",
         "has_run_ip_tcl": "true",
+        "parameters": {
+          "C_S00_AXI_ADDR_WIDTH": {
+            "value": "10"
+          },
+          "C_S00_AXI_DATA_WIDTH": {
+            "value": "64"
+          },
+          "N_S00": {
+            "value": "64"
+          }
+        },
         "reference_info": {
           "ref_type": "hdl",
           "ref_name": "logmapAXI",
@@ -218,7 +231,7 @@
             "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
             "parameters": {
               "DATA_WIDTH": {
-                "value": "32",
+                "value": "64",
                 "value_src": "auto"
               },
               "PROTOCOL": {
@@ -234,7 +247,7 @@
                 "value_src": "constant"
               },
               "ADDR_WIDTH": {
-                "value": "5",
+                "value": "10",
                 "value_src": "auto"
               },
               "AWUSER_WIDTH": {
@@ -339,7 +352,7 @@
               "AWADDR": {
                 "physical_name": "s00_axi_awaddr",
                 "direction": "I",
-                "left": "4",
+                "left": "9",
                 "right": "0"
               },
               "AWPROT": {
@@ -359,13 +372,13 @@
               "WDATA": {
                 "physical_name": "s00_axi_wdata",
                 "direction": "I",
-                "left": "31",
+                "left": "63",
                 "right": "0"
               },
               "WSTRB": {
                 "physical_name": "s00_axi_wstrb",
                 "direction": "I",
-                "left": "3",
+                "left": "7",
                 "right": "0"
               },
               "WVALID": {
@@ -393,7 +406,7 @@
               "ARADDR": {
                 "physical_name": "s00_axi_araddr",
                 "direction": "I",
-                "left": "4",
+                "left": "9",
                 "right": "0"
               },
               "ARPROT": {
@@ -413,7 +426,7 @@
               "RDATA": {
                 "physical_name": "s00_axi_rdata",
                 "direction": "O",
-                "left": "31",
+                "left": "63",
                 "right": "0"
               },
               "RRESP": {
@@ -434,16 +447,36 @@
           }
         },
         "ports": {
+          "s00_x_out": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          },
+          "s00_seed": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          },
+          "s00_clk": {
+            "type": "clk",
+            "direction": "O"
+          },
+          "s00_rst": {
+            "type": "rst",
+            "direction": "O"
+          },
+          "s00_load_seed": {
+            "direction": "O"
+          },
+          "s00_en": {
+            "direction": "O"
+          },
           "s00_axi_aclk": {
             "type": "clk",
             "direction": "I",
             "parameters": {
               "ASSOCIATED_BUSIF": {
                 "value": "s00_axi",
-                "value_src": "constant"
-              },
-              "ASSOCIATED_RESET": {
-                "value": "s00_axi_aresetn",
                 "value_src": "constant"
               },
               "FREQ_HZ": {
@@ -495,7 +528,7 @@
             "value": "50.000000"
           },
           "PCW_ACT_FPGA1_PERIPHERAL_FREQMHZ": {
-            "value": "10.000000"
+            "value": "100.000000"
           },
           "PCW_ACT_FPGA2_PERIPHERAL_FREQMHZ": {
             "value": "10.000000"
@@ -570,7 +603,7 @@
             "value": "50000000"
           },
           "PCW_CLK1_FREQ": {
-            "value": "10000000"
+            "value": "100000000"
           },
           "PCW_CLK2_FREQ": {
             "value": "10000000"
@@ -627,7 +660,7 @@
             "value": "0"
           },
           "PCW_EN_CLK1_PORT": {
-            "value": "0"
+            "value": "1"
           },
           "PCW_EN_CLK2_PORT": {
             "value": "0"
@@ -704,6 +737,9 @@
           "PCW_FCLK_CLK0_BUF": {
             "value": "TRUE"
           },
+          "PCW_FCLK_CLK1_BUF": {
+            "value": "FALSE"
+          },
           "PCW_FPGA0_PERIPHERAL_FREQMHZ": {
             "value": "50"
           },
@@ -717,6 +753,9 @@
             "value": "50"
           },
           "PCW_FPGA_FCLK0_ENABLE": {
+            "value": "1"
+          },
+          "PCW_FPGA_FCLK1_ENABLE": {
             "value": "1"
           },
           "PCW_GPIO_EMIO_GPIO_ENABLE": {
@@ -1001,9 +1040,6 @@
           },
           "PCW_SDIO_PERIPHERAL_CLKSRC": {
             "value": "IO PLL"
-          },
-          "PCW_SDIO_PERIPHERAL_FREQMHZ": {
-            "value": "25"
           },
           "PCW_SDIO_PERIPHERAL_VALID": {
             "value": "0"
@@ -1525,6 +1561,36 @@
         "xci_path": "ip\\design_1_rst_ps7_0_50M_0\\design_1_rst_ps7_0_50M_0.xci",
         "inst_hier_path": "rst_ps7_0_50M",
         "has_run_ip_tcl": "true"
+      },
+      "ila_0": {
+        "vlnv": "xilinx.com:ip:ila:6.2",
+        "ip_revision": "19",
+        "xci_name": "design_1_ila_0_0",
+        "xci_path": "ip\\design_1_ila_0_0\\design_1_ila_0_0.xci",
+        "inst_hier_path": "ila_0",
+        "has_run_ip_tcl": "true",
+        "parameters": {
+          "C_MONITOR_TYPE": {
+            "value": "Native"
+          },
+          "C_NUM_OF_PROBES": {
+            "value": "6"
+          },
+          "C_PROBE0_WIDTH": {
+            "value": "32"
+          },
+          "C_PROBE1_WIDTH": {
+            "value": "32"
+          }
+        }
+      },
+      "xlconstant_0": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "ip_revision": "10",
+        "xci_name": "design_1_xlconstant_0_0",
+        "xci_path": "ip\\design_1_xlconstant_0_0\\design_1_xlconstant_0_0.xci",
+        "inst_hier_path": "xlconstant_0",
+        "has_run_ip_tcl": "true"
       }
     },
     "interface_nets": {
@@ -1554,13 +1620,44 @@
       }
     },
     "nets": {
+      "logmapAXI_0_s00_en": {
+        "ports": [
+          "logmapAXI_0/s00_en",
+          "ila_0/probe5"
+        ]
+      },
+      "logmapAXI_0_s00_load_seed": {
+        "ports": [
+          "logmapAXI_0/s00_load_seed",
+          "ila_0/probe4"
+        ]
+      },
+      "logmapAXI_0_s00_rst": {
+        "ports": [
+          "logmapAXI_0/s00_rst",
+          "ila_0/probe3"
+        ]
+      },
+      "logmapAXI_0_s00_seed": {
+        "ports": [
+          "logmapAXI_0/s00_seed",
+          "ila_0/probe1"
+        ]
+      },
+      "logmapAXI_0_s00_x_out": {
+        "ports": [
+          "logmapAXI_0/s00_x_out",
+          "ila_0/probe0"
+        ]
+      },
       "processing_system7_0_FCLK_CLK0": {
         "ports": [
           "processing_system7_0/FCLK_CLK0",
           "axi_smc/aclk",
-          "logmapAXI_0/s00_axi_aclk",
           "rst_ps7_0_50M/slowest_sync_clk",
-          "processing_system7_0/M_AXI_GP0_ACLK"
+          "processing_system7_0/M_AXI_GP0_ACLK",
+          "ila_0/clk",
+          "logmapAXI_0/s00_axi_aclk"
         ]
       },
       "processing_system7_0_FCLK_RESET0_N": {
@@ -1572,8 +1669,14 @@
       "rst_ps7_0_50M_peripheral_aresetn": {
         "ports": [
           "rst_ps7_0_50M/peripheral_aresetn",
-          "logmapAXI_0/s00_axi_aresetn",
-          "axi_smc/aresetn"
+          "axi_smc/aresetn",
+          "logmapAXI_0/s00_axi_aresetn"
+        ]
+      },
+      "xlconstant_0_dout": {
+        "ports": [
+          "xlconstant_0/dout",
+          "ila_0/probe2"
         ]
       }
     },

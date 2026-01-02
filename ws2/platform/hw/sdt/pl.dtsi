@@ -5,6 +5,14 @@
 		#address-cells = <1>;
 		#size-cells = <1>;
 		firmware-name = "design_1_wrapper.bit.bin";
+		clocking1: clocking1 {
+			compatible = "xlnx,fclk";
+			assigned-clocks = <&clkc 16>;
+			assigned-clock-rates = <100000000>;
+			#clock-cells = <0>;
+			clock-output-names = "fabric_clk";
+			clocks = <&clkc 16>;
+		};
 		clocking0: clocking0 {
 			compatible = "xlnx,fclk";
 			assigned-clocks = <&clkc 15>;
@@ -14,6 +22,7 @@
 			clocks = <&clkc 15>;
 		};
 		logmapAXI_0: logmapAXI@40000000 {
+			xlnx,n-s00 = <8>;
 			xlnx,s00-axi-data-width = <32>;
 			compatible = "xlnx,logmapAXI-1.0";
 			status = "okay";

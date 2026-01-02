@@ -57,6 +57,8 @@ if {$::dispatch::connected} {
 
 OPTRACE "design_1_logmapAXI_0_0_synth_1" START { ROLLUP_AUTO }
 set_param general.usePosixSpawnForFork 1
+set_param chipscope.maxJobs 3
+set_param bd.open.in_stealth_mode 1
 set_msg_config  -id {[BD 41-1306]}  -suppress 
 set_msg_config  -id {[BD 41-1271]}  -suppress 
 set_msg_config  -id {[BD 5-699]}  -suppress 
@@ -86,7 +88,7 @@ read_vhdl -library xil_defaultlib {
   C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sources_1/new/tradlogm.vhd
   C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sources_1/imports/hdl/logmapAXI.vhd
 }
-read_ip -quiet c:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sources_1/bd/design_1/ip/design_1_logmapAXI_0_0/design_1_logmapAXI_0_0.xci
+read_ip -quiet C:/Users/arthu/minimalv2/LogisticMap/LogisticMap.srcs/sources_1/bd/design_1/ip/design_1_logmapAXI_0_0/design_1_logmapAXI_0_0.xci
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

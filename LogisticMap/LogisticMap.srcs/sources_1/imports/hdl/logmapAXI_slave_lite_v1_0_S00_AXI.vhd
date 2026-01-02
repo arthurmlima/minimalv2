@@ -5,18 +5,23 @@ use ieee.numeric_std.all;
 entity logmapAXI_slave_lite_v1_0_S00_AXI is
 	generic (
 		-- Users to add parameters here
-
+        N_S : integer := 64;
 		-- User parameters ends
 		-- Do not modify the parameters beyond this line
 
 		-- Width of S_AXI data bus
-		C_S_AXI_DATA_WIDTH	: integer	:= 32;
+		C_S_AXI_DATA_WIDTH	: integer	:= 64;
 		-- Width of S_AXI address bus
-		C_S_AXI_ADDR_WIDTH	: integer	:= 5
+		C_S_AXI_ADDR_WIDTH	: integer	:= 10
 	);
 	port (
 		-- Users to add ports here
-
+	    p_x_out      : out std_logic_vector(N_S-1 downto 0);
+		p_seed       : out std_logic_vector(N_S-1 downto 0);
+		p_clk        : out std_logic;
+		p_rst        : out std_logic;
+		p_load_seed  : out std_logic;
+		p_en         : out std_logic;
 		-- User ports ends
 		-- Do not modify the ports beyond this line
 
@@ -136,7 +141,6 @@ architecture arch_imp of logmapAXI_slave_lite_v1_0_S00_AXI is
 --   slv_reg3[7:0] -> seed
 --   read @ reg4    -> x_out[7:0] (readback muxed, not stored)
 --------------------------------------------------------------------------
-constant N_LOG : positive := 8;
 
 component iter_mult_not is
   generic (
@@ -155,8 +159,8 @@ end component;
 signal iter_rst       : std_logic;
 signal iter_en        : std_logic;
 signal iter_load_seed : std_logic;
-signal iter_seed      : unsigned(N_LOG-1 downto 0);
-signal iter_x         : unsigned(N_LOG-1 downto 0);
+signal iter_seed      : unsigned(N_S-1 downto 0);
+signal iter_x         : unsigned(N_S-1 downto 0);
 
 signal x_out_slv      : std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
 begin
@@ -366,12 +370,17 @@ begin
 	 (others => '0');
 
 	-- Add user logic here
-
+	    p_x_out    <=  std_logic_vector(resize(iter_x, N_S));
+		p_seed     <= slv_reg3(N_S-1 downto 0); 
+		p_clk      <= S_AXI_ACLK ;  
+		p_rst      <=  slv_reg0(0);
+		p_load_seed  <= slv_reg2(0);
+		p_en    <= slv_reg1(0);     
 -- Map AXI registers -> core inputs (one register per input)
 iter_rst       <= slv_reg0(0);
 iter_en        <= slv_reg1(0);
 iter_load_seed <= slv_reg2(0);
-iter_seed      <= unsigned(slv_reg3(N_LOG-1 downto 0));
+iter_seed      <= unsigned(slv_reg3(N_S-1 downto 0));
 
 -- Pack output into 32-bit read data for register 4 (LSBs hold x_out)
 x_out_slv <= std_logic_vector(resize(iter_x, C_S_AXI_DATA_WIDTH));
@@ -379,7 +388,7 @@ x_out_slv <= std_logic_vector(resize(iter_x, C_S_AXI_DATA_WIDTH));
 -- Instantiate the user core (clock = AXI clock)
 u_iter : iter_mult_not
   generic map (
-    N => N_LOG
+    N => N_S
   )
   port map (
     clk       => S_AXI_ACLK,

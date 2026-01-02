@@ -55,24 +55,30 @@ USE ieee.numeric_std.ALL;
 
 ENTITY design_1_logmapAXI_0_0 IS
   PORT (
+    s00_x_out : OUT STD_LOGIC_VECTOR(63 DOWNTO 0);
+    s00_seed : OUT STD_LOGIC_VECTOR(63 DOWNTO 0);
+    s00_clk : OUT STD_LOGIC;
+    s00_rst : OUT STD_LOGIC;
+    s00_load_seed : OUT STD_LOGIC;
+    s00_en : OUT STD_LOGIC;
     s00_axi_aclk : IN STD_LOGIC;
     s00_axi_aresetn : IN STD_LOGIC;
-    s00_axi_awaddr : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
+    s00_axi_awaddr : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
     s00_axi_awprot : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
     s00_axi_awvalid : IN STD_LOGIC;
     s00_axi_awready : OUT STD_LOGIC;
-    s00_axi_wdata : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-    s00_axi_wstrb : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+    s00_axi_wdata : IN STD_LOGIC_VECTOR(63 DOWNTO 0);
+    s00_axi_wstrb : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
     s00_axi_wvalid : IN STD_LOGIC;
     s00_axi_wready : OUT STD_LOGIC;
     s00_axi_bresp : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
     s00_axi_bvalid : OUT STD_LOGIC;
     s00_axi_bready : IN STD_LOGIC;
-    s00_axi_araddr : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
+    s00_axi_araddr : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
     s00_axi_arprot : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
     s00_axi_arvalid : IN STD_LOGIC;
     s00_axi_arready : OUT STD_LOGIC;
-    s00_axi_rdata : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+    s00_axi_rdata : OUT STD_LOGIC_VECTOR(63 DOWNTO 0);
     s00_axi_rresp : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
     s00_axi_rvalid : OUT STD_LOGIC;
     s00_axi_rready : IN STD_LOGIC
@@ -84,28 +90,35 @@ ARCHITECTURE design_1_logmapAXI_0_0_arch OF design_1_logmapAXI_0_0 IS
   ATTRIBUTE DowngradeIPIdentifiedWarnings OF design_1_logmapAXI_0_0_arch: ARCHITECTURE IS "yes";
   COMPONENT logmapAXI IS
     GENERIC (
+      N_S00 : INTEGER;
       C_S00_AXI_DATA_WIDTH : INTEGER;
       C_S00_AXI_ADDR_WIDTH : INTEGER
     );
     PORT (
+      s00_x_out : OUT STD_LOGIC_VECTOR(63 DOWNTO 0);
+      s00_seed : OUT STD_LOGIC_VECTOR(63 DOWNTO 0);
+      s00_clk : OUT STD_LOGIC;
+      s00_rst : OUT STD_LOGIC;
+      s00_load_seed : OUT STD_LOGIC;
+      s00_en : OUT STD_LOGIC;
       s00_axi_aclk : IN STD_LOGIC;
       s00_axi_aresetn : IN STD_LOGIC;
-      s00_axi_awaddr : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
+      s00_axi_awaddr : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
       s00_axi_awprot : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
       s00_axi_awvalid : IN STD_LOGIC;
       s00_axi_awready : OUT STD_LOGIC;
-      s00_axi_wdata : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-      s00_axi_wstrb : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+      s00_axi_wdata : IN STD_LOGIC_VECTOR(63 DOWNTO 0);
+      s00_axi_wstrb : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
       s00_axi_wvalid : IN STD_LOGIC;
       s00_axi_wready : OUT STD_LOGIC;
       s00_axi_bresp : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
       s00_axi_bvalid : OUT STD_LOGIC;
       s00_axi_bready : IN STD_LOGIC;
-      s00_axi_araddr : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
+      s00_axi_araddr : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
       s00_axi_arprot : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
       s00_axi_arvalid : IN STD_LOGIC;
       s00_axi_arready : OUT STD_LOGIC;
-      s00_axi_rdata : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+      s00_axi_rdata : OUT STD_LOGIC_VECTOR(63 DOWNTO 0);
       s00_axi_rresp : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
       s00_axi_rvalid : OUT STD_LOGIC;
       s00_axi_rready : IN STD_LOGIC
@@ -116,7 +129,7 @@ ARCHITECTURE design_1_logmapAXI_0_0_arch OF design_1_logmapAXI_0_0 IS
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF design_1_logmapAXI_0_0_arch : ARCHITECTURE IS "design_1_logmapAXI_0_0,logmapAXI,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF design_1_logmapAXI_0_0_arch: ARCHITECTURE IS "design_1_logmapAXI_0_0,logmapAXI,{x_ipProduct=Vivado 2025.2,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=logmapAXI,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=5}";
+  ATTRIBUTE CORE_GENERATION_INFO OF design_1_logmapAXI_0_0_arch: ARCHITECTURE IS "design_1_logmapAXI_0_0,logmapAXI,{x_ipProduct=Vivado 2025.2,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=logmapAXI,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,N_S00=64,C_S00_AXI_DATA_WIDTH=64,C_S00_AXI_ADDR_WIDTH=10}";
   ATTRIBUTE IP_DEFINITION_SOURCE : STRING;
   ATTRIBUTE IP_DEFINITION_SOURCE OF design_1_logmapAXI_0_0_arch: ARCHITECTURE IS "module_ref";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
@@ -124,7 +137,7 @@ ARCHITECTURE design_1_logmapAXI_0_0_arch OF design_1_logmapAXI_0_0 IS
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
   ATTRIBUTE X_INTERFACE_INFO OF s00_axi_aclk: SIGNAL IS "xilinx.com:signal:clock:1.0 s00_axi_aclk CLK";
   ATTRIBUTE X_INTERFACE_MODE OF s00_axi_aclk: SIGNAL IS "slave s00_axi_aclk";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF s00_axi_aclk: SIGNAL IS "XIL_INTERFACENAME s00_axi_aclk, ASSOCIATED_BUSIF s00_axi, ASSOCIATED_RESET s00_axi_aresetn, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_1_processing_system7_0_1_FCLK_CLK0, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF s00_axi_aclk: SIGNAL IS "XIL_INTERFACENAME s00_axi_aclk, ASSOCIATED_BUSIF s00_axi, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_1_processing_system7_0_1_FCLK_CLK0, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF s00_axi_araddr: SIGNAL IS "xilinx.com:interface:aximm:1.0 s00_axi ARADDR";
   ATTRIBUTE X_INTERFACE_INFO OF s00_axi_aresetn: SIGNAL IS "xilinx.com:signal:reset:1.0 s00_axi_aresetn RST";
   ATTRIBUTE X_INTERFACE_MODE OF s00_axi_aresetn: SIGNAL IS "slave s00_axi_aresetn";
@@ -134,8 +147,8 @@ ARCHITECTURE design_1_logmapAXI_0_0_arch OF design_1_logmapAXI_0_0 IS
   ATTRIBUTE X_INTERFACE_INFO OF s00_axi_arvalid: SIGNAL IS "xilinx.com:interface:aximm:1.0 s00_axi ARVALID";
   ATTRIBUTE X_INTERFACE_INFO OF s00_axi_awaddr: SIGNAL IS "xilinx.com:interface:aximm:1.0 s00_axi AWADDR";
   ATTRIBUTE X_INTERFACE_MODE OF s00_axi_awaddr: SIGNAL IS "slave s00_axi";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF s00_axi_awaddr: SIGNAL IS "XIL_INTERFACENAME s00_axi, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 50000000, ID_WIDTH 0, ADDR_WIDTH 5, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN design_1_processing_system7_0_1_FCLK_CLK0, NUM_READ_THREADS " & 
-"1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF s00_axi_awaddr: SIGNAL IS "XIL_INTERFACENAME s00_axi, DATA_WIDTH 64, PROTOCOL AXI4LITE, FREQ_HZ 50000000, ID_WIDTH 0, ADDR_WIDTH 10, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN design_1_processing_system7_0_1_FCLK_CLK0, NUM_READ_THREADS" & 
+" 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF s00_axi_awprot: SIGNAL IS "xilinx.com:interface:aximm:1.0 s00_axi AWPROT";
   ATTRIBUTE X_INTERFACE_INFO OF s00_axi_awready: SIGNAL IS "xilinx.com:interface:aximm:1.0 s00_axi AWREADY";
   ATTRIBUTE X_INTERFACE_INFO OF s00_axi_awvalid: SIGNAL IS "xilinx.com:interface:aximm:1.0 s00_axi AWVALID";
@@ -150,13 +163,26 @@ ARCHITECTURE design_1_logmapAXI_0_0_arch OF design_1_logmapAXI_0_0 IS
   ATTRIBUTE X_INTERFACE_INFO OF s00_axi_wready: SIGNAL IS "xilinx.com:interface:aximm:1.0 s00_axi WREADY";
   ATTRIBUTE X_INTERFACE_INFO OF s00_axi_wstrb: SIGNAL IS "xilinx.com:interface:aximm:1.0 s00_axi WSTRB";
   ATTRIBUTE X_INTERFACE_INFO OF s00_axi_wvalid: SIGNAL IS "xilinx.com:interface:aximm:1.0 s00_axi WVALID";
+  ATTRIBUTE X_INTERFACE_INFO OF s00_clk: SIGNAL IS "xilinx.com:signal:clock:1.0 s00_clk CLK";
+  ATTRIBUTE X_INTERFACE_MODE OF s00_clk: SIGNAL IS "master s00_clk";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF s00_clk: SIGNAL IS "XIL_INTERFACENAME s00_clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_1_logmapAXI_0_0_s00_clk, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_INFO OF s00_rst: SIGNAL IS "xilinx.com:signal:reset:1.0 s00_rst RST";
+  ATTRIBUTE X_INTERFACE_MODE OF s00_rst: SIGNAL IS "master s00_rst";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF s00_rst: SIGNAL IS "XIL_INTERFACENAME s00_rst, POLARITY ACTIVE_LOW, INSERT_VIP 0";
 BEGIN
   U0 : logmapAXI
     GENERIC MAP (
-      C_S00_AXI_DATA_WIDTH => 32,
-      C_S00_AXI_ADDR_WIDTH => 5
+      N_S00 => 64,
+      C_S00_AXI_DATA_WIDTH => 64,
+      C_S00_AXI_ADDR_WIDTH => 10
     )
     PORT MAP (
+      s00_x_out => s00_x_out,
+      s00_seed => s00_seed,
+      s00_clk => s00_clk,
+      s00_rst => s00_rst,
+      s00_load_seed => s00_load_seed,
+      s00_en => s00_en,
       s00_axi_aclk => s00_axi_aclk,
       s00_axi_aresetn => s00_axi_aresetn,
       s00_axi_awaddr => s00_axi_awaddr,
