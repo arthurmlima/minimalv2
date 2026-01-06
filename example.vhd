@@ -1,0 +1,68 @@
+library ieee;
+use ieee.std_logic_1164.ALL;
+
+entity example is
+    Port ( a : in std_logic_vector(7 downto 0);
+           B : in std_logic;
+           Y : out std_logic);
+end example;
+
+architecture Behavioral of example is
+begin
+    signal s_1_1_2 : std_logic;
+    signal s_1_1_3 : std_logic;
+    signal s_1_1_4 : std_logic;
+    signal s_1_1_5 : std_logic;
+    signal s_1_1_6 : std_logic;
+    signal s_1_1_7 : std_logic;
+    signal s_1_1_8 : std_logic;
+    signal s_1_2_3 : std_logic;
+    signal s_1_2_4 : std_logic;
+    signal s_1_2_5 : std_logic;
+    signal s_1_2_6 : std_logic;
+    signal s_1_2_7 : std_logic;
+    signal s_1_2_8 : std_logic;
+    signal s_1_3_4 : std_logic;
+    signal s_1_3_5 : std_logic;
+    signal s_1_3_6 : std_logic;
+    signal s_1_3_7 : std_logic;
+    signal s_1_3_8 : std_logic;
+    signal s_1_4_5 : std_logic;
+    signal s_1_4_6 : std_logic;
+    signal s_1_4_7 : std_logic;
+    signal s_1_4_8 : std_logic;
+    signal s_1_5_6 : std_logic;
+    signal s_1_5_7 : std_logic;
+    signal s_1_5_8 : std_logic;
+    signal s_1_6_7 : std_logic;
+    signal s_1_6_8 : std_logic;
+    signal s_1_7_8 : std_logic;
+    s_1_1_2 <= a(0) xor (not a(1));
+    s_1_1_3 <= a(0) xor (not a(2));
+    s_1_1_4 <= a(0) xor (not a(3));
+    s_1_1_5 <= a(0) xor (not a(4));
+    s_1_1_6 <= a(0) xor (not a(5));
+    s_1_1_7 <= a(0) xor (not a(6));
+    s_1_1_8 <= a(0) xor (not a(7));
+    s_1_2_3 <= a(1) xor (not a(2));
+    s_1_2_4 <= a(1) xor (not a(3));
+    s_1_2_5 <= a(1) xor (not a(4));
+    s_1_2_6 <= a(1) xor (not a(5));
+    s_1_2_7 <= a(1) xor (not a(6));
+    s_1_2_8 <= a(1) xor (not a(7));
+    s_1_3_4 <= a(2) xor (not a(3));
+    s_1_3_5 <= a(2) xor (not a(4));
+    s_1_3_6 <= a(2) xor (not a(5));
+    s_1_3_7 <= a(2) xor (not a(6));
+    s_1_3_8 <= a(2) xor (not a(7));
+    s_1_4_5 <= a(3) xor (not a(4));
+    s_1_4_6 <= a(3) xor (not a(5));
+    s_1_4_7 <= a(3) xor (not a(6));
+    s_1_4_8 <= a(3) xor (not a(7));
+    s_1_5_6 <= a(4) xor (not a(5));
+    s_1_5_7 <= a(4) xor (not a(6));
+    s_1_5_8 <= a(4) xor (not a(7));
+    s_1_6_7 <= a(5) xor (not a(6));
+    s_1_6_8 <= a(5) xor (not a(7));
+    s_1_7_8 <= a(6) xor (not a(7));
+end Behavioral;

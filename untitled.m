@@ -1,0 +1,63 @@
+clear all;
+clc
+[a,b,c]=demo_chunks(8);
+M=merge_cells_append_multi(a,b,c);
+
+% M is a cell matrix where each non-empty cell is a 1x3 vector [d x y]
+[R, C] = size(M);
+
+for i = 1:C                      % loop columns
+    for j = 1:R                  % loop rows within column (top -> bottom)
+
+        v = M{j,i};
+
+        % break column if null/empty
+        if isempty(v)
+            break;
+        end
+
+        % safety check (optional)
+        if numel(v) ~= 3
+            error("M{%d,%d} must be a 1x3 triple.", j, i);
+        end
+
+        d = v(1);
+        x = v(2);
+        y = v(3);
+
+        if d == 1
+            % -------- Rule for [1,x,y] ----------
+            % <<< put your rule here >>>
+            % Example:
+            fprintf('    s_%d_%d_%d <= a(%d) xor (not a(%d));\n',  d, x, y, x, y );
+        
+        elseif d >= 2
+            %fprintf('    s_%d_%d_%d <= (s_%d_%d_%d) and ( ',  d, x, y,  d-1, x, y);
+            va=[d-1 x y];
+            [find_col, find_row] = find_prev_in_col_Cminus1(M, i-1, va);
+            fprintf('\n    s_%d_%d_%d <= ', d, x, y);
+            idx=0;
+            while (find_row + idx <= R) && ~isempty(M{find_row + idx, find_col})
+            o=M{find_row+idx,find_col};
+            if idx==0 
+                if isempty(M{find_row+idx+1,find_col}) %|| find_row+idx+1<R
+                    fprintf(' (s_%d_%d_%d) and ((s_%d_%d_%d));\n ', o(1), o(2), o(3), o(1), o(2), o(3))                 
+                else 
+                    fprintf(' (s_%d_%d_%d) and ((s_%d_%d_%d) xor', o(1), o(2), o(3), o(1), o(2), o(3))
+                end
+            elseif find_row+idx+1==R+1
+            fprintf(' (s_%d_%d_%d);\n', o(1), o(2), o(3)); 
+
+            elseif idx>0 && ((isempty(M{find_row+idx+1,find_col}))) %|| (find_row+idx+1==R+1))
+             fprintf(' (s_%d_%d_%d)); \n', o(1), o(2), o(3));
+            elseif idx>0 && ((~isempty(M{find_row+idx+1,find_col}))|| (find_row+idx+1<=R))  
+            fprintf(' (s_%d_%d_%d) xor', o(1), o(2), o(3)); 
+            elseif idx>0 && ((~isempty(M{find_row+idx+1,find_col})) && (find_row+idx+1>R+1))  
+            fprintf(' (s_%d_%d_%d);\n', o(1), o(2), o(3)); 
+            end
+            idx=idx+1;
+      
+        end
+        end
+    end
+end
