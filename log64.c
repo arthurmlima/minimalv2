@@ -2,6 +2,7 @@
 #include <inttypes.h>
 #include <stdio.h>
 #include <math.h>
+uint64_t val = 0x3C00FFF03C00FFF0ULL;  // your a_tb seed
 
 static inline long double unsigned_to_fraction_u64(uint64_t num) {
     return ldexpl((long double)num, -64);

@@ -20,19 +20,24 @@ static inline uint8_t u8_bitwise_not(uint8_t x){ return (uint8_t)(~x);}
 
 // Example usage
 int main(void) {
-    uint8_t examples[] = {0x5AU, 2u, 0x80u, 0x40u, 0xFFu};
+    uint8_t examples[] = {0x5C, 0xAA, 0xF0, 0x40u, 0xFFu};
     size_t n = sizeof(examples) / sizeof(examples[0]);
 
-    printf("Testing unsigned_to_fraction() with example inputs:\n");
-    uint8_t val = 128u;
-    printf("Initial value: %f\n", unsigned_to_fraction(val));
-    for (size_t i = 0; i < 30; ++i) {
-        double logistic = 4.0 * unsigned_to_fraction(val) * (1.0 - unsigned_to_fraction(val));
-        val = mul_with_not_keep_8_msn(val);
+    uint8_t val = 0x5C;
+    printf("(0x%02X) = %u \n", val,val);   
+    val = mul_with_not_keep_8_msn(val);
+    printf("(0x%02X) = %u \n", val,val);
 
-        printf("unsigned_to_fraction(%3u) = %.6f, logistic map = %.6f\n", val, unsigned_to_fraction(val), logistic);
-    }
+    val = 0xAA;
+    printf("(0x%02X) = %u \n", val,val);   
+    val = mul_with_not_keep_8_msn(val);
+    printf("(0x%02X) = %u \n", val,val);
 
-    return 0;
+    val = 0xF0;
+    printf("(0x%02X) = %u \n", val,val);   
+    val = mul_with_not_keep_8_msn(val);
+    printf("(0x%02X) = %u \n", val,val);
+
+
 }
 
