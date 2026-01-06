@@ -1,10 +1,10 @@
 clear all;
 clc
-K = 8;
+K = 4;
 [a,b,c]=demo_chunks(K);
 M=merge_cells_append_multi(a,b,c);
 
-vhdlFileName = 'example2.vhd';
+vhdlFileName = 'MariusMethod.vhd';
 
 % Open the file for writing
 fileID = fopen(vhdlFileName, 'w');
@@ -16,12 +16,23 @@ end
 
 % Write VHDL code to the file
 fprintf(fileID, 'library ieee;\n');
-fprintf(fileID, 'use ieee.std_logic_1164.ALL;\n\n');
-fprintf(fileID, 'entity example is\n');
-fprintf(fileID, '    Port ( a     : in std_logic_vector(%d downto 0);\n', K-1);
-fprintf(fileID, '           s : out std_logic_vector(%d downto 0));\n',K-1);
-fprintf(fileID, 'end example;\n\n');
-fprintf(fileID, 'architecture Behavioral of example is\n');
+fprintf(fileID, 'use ieee.std_logic_1164.all;\n\n');
+
+fprintf(fileID, 'entity MariusMethod is\n');
+fprintf(fileID, '  port (\n');
+fprintf(fileID, '    clk  : in  std_logic;\n');
+fprintf(fileID, '    rst  : in  std_logic;\n');
+fprintf(fileID, '    load : in  std_logic;\n');
+fprintf(fileID, '    en   : in  std_logic;\n');
+fprintf(fileID, '    a    : in  std_logic_vector(%d downto 0);\n', K-1);
+fprintf(fileID, '    s    : out std_logic_vector(%d downto 0)\n', K-1);
+fprintf(fileID, '  );\n');
+fprintf(fileID, 'end MariusMethod;\n\n');
+
+fprintf(fileID, 'architecture rtl of MariusMethod is\n');
+fprintf(fileID, '  signal x_reg  : std_logic_vector(%d downto 0) := (others => ''0'');\n', K-1);
+fprintf(fileID, '  signal x_next : std_logic_vector(%d downto 0);\n', K-1);
+fprintf(fileID, '\n');
 
 [nRows, nCols] = size(a);
 
@@ -93,8 +104,7 @@ for i = 1:C                      % loop columns
             % -------- Rule for [1,x,y] ----------
             % <<< put your rule here >>>
             % Example:
-            fprintf(fileID,'    s_%d_%d_%d <= a(%d) xor a(%d);\n\n',  d, x, y, (K - x), (K - y) );
-        
+            fprintf(fileID,'    s_%d_%d_%d <= x_reg(%d) xor x_reg(%d);\n\n',d, x, y, (K - x), (K - y) );
         elseif d >= 2
             %fprintf(fileID,'    s_%d_%d_%d <= (s_%d_%d_%d) and ( ',  d, x, y,  d-1, x, y);
             va=[d-1 x y];
@@ -129,7 +139,7 @@ end
 
 
 for Colum_indx=(2*K-2):-1:K-1
-    fprintf(fileID, '    s(%d)<= ',Colum_indx-(2*K-2)/2);
+    fprintf(fileID, '    x_next(%d)<= ',Colum_indx-(2*K-2)/2);
     n_not_empty = nnz(~cellfun(@isempty, M(:, Colum_indx)));
     for Row_indx=(1:n_not_empty)
         o = M{Row_indx,Colum_indx};
@@ -152,8 +162,20 @@ for Colum_indx=(2*K-2):-1:K-1
 end
 
 
+fprintf(fileID, '  process(clk)\n');
+fprintf(fileID, '  begin\n');
+fprintf(fileID, '    if rising_edge(clk) then\n');
+fprintf(fileID, '      if rst = ''1'' then\n');
+fprintf(fileID, '        x_reg <= (others => ''0'');\n');
+fprintf(fileID, '      elsif load = ''1'' then\n');
+fprintf(fileID, '        x_reg <= a;\n');
+fprintf(fileID, '      elsif en = ''1'' then\n');
+fprintf(fileID, '        x_reg <= x_next;\n');
+fprintf(fileID, '      end if;\n');
+fprintf(fileID, '    end if;\n');
+fprintf(fileID, '  end process;\n\n');
+fprintf(fileID, '  s <= x_reg;\n');
+fprintf(fileID, 'end rtl;\n');
 
-
-fprintf(fileID, 'end Behavioral;\n');
 fclose(fileID);
 
