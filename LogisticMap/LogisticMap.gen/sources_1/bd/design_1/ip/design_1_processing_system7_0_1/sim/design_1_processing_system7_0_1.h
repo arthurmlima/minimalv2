@@ -2,7 +2,7 @@
 #define IP_DESIGN_1_PROCESSING_SYSTEM7_0_1_H_
 
 // (c) Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-// (c) Copyright 2022-2025 Advanced Micro Devices, Inc. All rights reserved.
+// (c) Copyright 2022-2026 Advanced Micro Devices, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
 // of AMD and is protected under U.S. and international copyright
@@ -120,7 +120,6 @@ public:
   sc_core::sc_in< sc_dt::sc_bv<2> > M_AXI_GP0_RRESP;
   sc_core::sc_in< sc_dt::sc_bv<32> > M_AXI_GP0_RDATA;
   sc_core::sc_out< bool > FCLK_CLK0;
-  sc_core::sc_out< bool > FCLK_CLK1;
   sc_core::sc_out< bool > FCLK_RESET0_N;
   sc_core::sc_out< sc_dt::sc_bv<32> > MIO;
   sc_core::sc_out< bool > DDR_CAS_n;
@@ -220,7 +219,6 @@ public:
   sc_core::sc_in< sc_dt::sc_bv<2> > M_AXI_GP0_RRESP;
   sc_core::sc_in< sc_dt::sc_bv<32> > M_AXI_GP0_RDATA;
   sc_core::sc_out< bool > FCLK_CLK0;
-  sc_core::sc_out< bool > FCLK_CLK1;
   sc_core::sc_out< bool > FCLK_RESET0_N;
   sc_core::sc_inout< sc_dt::sc_bv<32> > MIO;
   sc_core::sc_inout< bool > DDR_CAS_n;
@@ -320,7 +318,6 @@ public:
   sc_core::sc_in< sc_dt::sc_bv<2> > M_AXI_GP0_RRESP;
   sc_core::sc_in< sc_dt::sc_bv<32> > M_AXI_GP0_RDATA;
   sc_core::sc_out< bool > FCLK_CLK0;
-  sc_core::sc_out< bool > FCLK_CLK1;
   sc_core::sc_out< bool > FCLK_RESET0_N;
   sc_core::sc_out< sc_dt::sc_bv<32> > MIO;
   sc_core::sc_out< bool > DDR_CAS_n;
@@ -422,7 +419,6 @@ public:
   sc_core::sc_in< sc_dt::sc_bv<2> > M_AXI_GP0_RRESP;
   sc_core::sc_in< sc_dt::sc_bv<32> > M_AXI_GP0_RDATA;
   sc_core::sc_out< bool > FCLK_CLK0;
-  sc_core::sc_out< bool > FCLK_CLK1;
   sc_core::sc_out< bool > FCLK_RESET0_N;
   sc_core::sc_out< sc_dt::sc_bv<32> > MIO;
   sc_core::sc_out< bool > DDR_CAS_n;
@@ -530,7 +526,6 @@ public:
   sc_core::sc_in< sc_dt::sc_bv<2> > M_AXI_GP0_RRESP;
   sc_core::sc_in< sc_dt::sc_bv<32> > M_AXI_GP0_RDATA;
   sc_core::sc_out< bool > FCLK_CLK0;
-  sc_core::sc_out< bool > FCLK_CLK1;
   sc_core::sc_out< bool > FCLK_RESET0_N;
   sc_core::sc_out< sc_dt::sc_bv<32> > MIO;
   sc_core::sc_out< bool > DDR_CAS_n;

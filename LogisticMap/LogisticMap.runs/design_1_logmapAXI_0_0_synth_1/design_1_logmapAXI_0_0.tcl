@@ -77,7 +77,10 @@ set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part avnet-tria:minized:part0:1.4 [current_project]
-set_property ip_repo_paths c:/Users/arthu/minimalv2/ip_repo/logmapAXI_1_0 [current_project]
+set_property ip_repo_paths {
+  c:/Users/arthu/minimalv2/ip_repo/myip_1_0
+  c:/Users/arthu/minimalv2/ip_repo/logmapAXI_1_0
+} [current_project]
 update_ip_catalog
 set_property ip_output_repo c:/Users/arthu/minimalv2/LogisticMap/LogisticMap.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]

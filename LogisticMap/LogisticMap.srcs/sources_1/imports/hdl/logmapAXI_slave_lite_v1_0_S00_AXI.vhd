@@ -16,12 +16,12 @@ entity logmapAXI_slave_lite_v1_0_S00_AXI is
 	);
 	port (
 		-- Users to add ports here
-	    p_x_out      : out std_logic_vector(N_S-1 downto 0);
-		p_seed       : out std_logic_vector(N_S-1 downto 0);
-		p_clk        : out std_logic;
-		p_rst        : out std_logic;
-		p_load_seed  : out std_logic;
-		p_en         : out std_logic;
+	  --  p_x_out      : out std_logic_vector(N_S-1 downto 0);
+	--	p_seed       : out std_logic_vector(N_S-1 downto 0);
+	--	p_clk        : out std_logic;
+	--	p_rst        : out std_logic;
+	--	p_load_seed  : out std_logic;
+	--	p_en         : out std_logic;
 		-- User ports ends
 		-- Do not modify the ports beyond this line
 
@@ -144,7 +144,7 @@ architecture arch_imp of logmapAXI_slave_lite_v1_0_S00_AXI is
 
 component iter_mult_not is
   generic (
-    N : positive := 8
+    N : positive := 64
   );
   port (
     clk       : in  std_logic;
@@ -370,12 +370,12 @@ begin
 	 (others => '0');
 
 	-- Add user logic here
-	    p_x_out    <=  std_logic_vector(resize(iter_x, N_S));
-		p_seed     <= slv_reg3(N_S-1 downto 0); 
-		p_clk      <= S_AXI_ACLK ;  
-		p_rst      <=  slv_reg0(0);
-		p_load_seed  <= slv_reg2(0);
-		p_en    <= slv_reg1(0);     
+	    --p_x_out    <=  std_logic_vector(resize(iter_x, N_S));
+		--p_seed     <= slv_reg3(N_S-1 downto 0); 
+		--p_clk      <= S_AXI_ACLK ;  
+		--p_rst      <=  slv_reg0(0);
+		--p_load_seed  <= slv_reg2(0);
+		--p_en    <= slv_reg1(0);     
 -- Map AXI registers -> core inputs (one register per input)
 iter_rst       <= slv_reg0(0);
 iter_en        <= slv_reg1(0);
