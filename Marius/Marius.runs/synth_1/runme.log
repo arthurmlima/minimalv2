@@ -1,0 +1,428 @@
+
+*** Running vivado
+    with args -log MariusMethod_25.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source MariusMethod_25.tcl
+
+
+
+****** Vivado v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Wed Jan  7 10:13:34 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source MariusMethod_25.tcl -notrace
+create_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:07 . Memory (MB): peak = 545.996 ; gain = 232.855
+Command: read_checkpoint -auto_incremental -incremental C:/Users/arthu/Marius/Marius.srcs/utils_1/imports/synth_1/example.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/arthu/Marius/Marius.srcs/utils_1/imports/synth_1/example.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top MariusMethod_25 -part xc7z007sclg225-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z007s'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z007s'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 19116
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1089.340 ; gain = 530.570
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'MariusMethod_25' [C:/Users/arthu/Marius/Marius.srcs/sources_1/imports/Archive/MariusMethod_25.vhd:15]
+INFO: [Synth 8-256] done synthesizing module 'MariusMethod_25' (0#1) [C:/Users/arthu/Marius/Marius.srcs/sources_1/imports/Archive/MariusMethod_25.vhd:15]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:26:21 ; elapsed = 00:26:34 . Memory (MB): peak = 8699.605 ; gain = 8140.836
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:27:01 ; elapsed = 00:27:16 . Memory (MB): peak = 8699.605 ; gain = 8140.836
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z007sclg225-1
+INFO: [Device 21-403] Loading part xc7z007sclg225-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:27:01 ; elapsed = 00:27:16 . Memory (MB): peak = 8699.605 ; gain = 8140.836
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Preparing Guide Design
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-6895] The reference checkpoint C:/Users/arthu/Marius/Marius.srcs/utils_1/imports/synth_1/example.dcp is not suitable for use with incremental synthesis for this design. Please regenerate the checkpoint for this design with -incremental_synth switch in the same Vivado session that synth_design has been run. Synthesis will continue with the default flow
+---------------------------------------------------------------------------------
+Finished Doing Graph Differ : Time (s): cpu = 00:27:23 ; elapsed = 00:27:35 . Memory (MB): peak = 8699.605 ; gain = 8140.836
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Preparing Guide Design : Time (s): cpu = 00:27:23 ; elapsed = 00:27:35 . Memory (MB): peak = 8699.605 ; gain = 8140.836
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:55:26 ; elapsed = 00:55:42 . Memory (MB): peak = 8699.605 ; gain = 8140.836
+---------------------------------------------------------------------------------
+
+
+Incremental Synthesis Report Summary:
+
+1. Incremental synthesis run: no
+
+   Reason for not running incremental synthesis : 
+
+
+INFO: [Synth 8-7130] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 340   
+	  50 Input      1 Bit         XORs := 30    
+	  51 Input      1 Bit         XORs := 30    
+	  52 Input      1 Bit         XORs := 30    
+	  53 Input      1 Bit         XORs := 29    
+	  54 Input      1 Bit         XORs := 29    
+	  55 Input      1 Bit         XORs := 29    
+	  56 Input      1 Bit         XORs := 29    
+	  57 Input      1 Bit         XORs := 29    
+	  58 Input      1 Bit         XORs := 29    
+	  59 Input      1 Bit         XORs := 29    
+	  60 Input      1 Bit         XORs := 28    
+	  61 Input      1 Bit         XORs := 28    
+	  62 Input      1 Bit         XORs := 28    
+	  63 Input      1 Bit         XORs := 28    
+	  64 Input      1 Bit         XORs := 28    
+	  65 Input      1 Bit         XORs := 28    
+	  66 Input      1 Bit         XORs := 28    
+	  67 Input      1 Bit         XORs := 28    
+	   3 Input      1 Bit         XORs := 42    
+	   4 Input      1 Bit         XORs := 42    
+	   5 Input      1 Bit         XORs := 41    
+	   6 Input      1 Bit         XORs := 40    
+	   7 Input      1 Bit         XORs := 40    
+	   8 Input      1 Bit         XORs := 39    
+	   9 Input      1 Bit         XORs := 39    
+	  10 Input      1 Bit         XORs := 38    
+	  11 Input      1 Bit         XORs := 38    
+	  12 Input      1 Bit         XORs := 38    
+	  13 Input      1 Bit         XORs := 37    
+	  14 Input      1 Bit         XORs := 37    
+	  15 Input      1 Bit         XORs := 37    
+	  16 Input      1 Bit         XORs := 36    
+	  17 Input      1 Bit         XORs := 36    
+	  18 Input      1 Bit         XORs := 36    
+	  19 Input      1 Bit         XORs := 36    
+	  20 Input      1 Bit         XORs := 35    
+	  21 Input      1 Bit         XORs := 35    
+	  22 Input      1 Bit         XORs := 35    
+	  23 Input      1 Bit         XORs := 35    
+	  24 Input      1 Bit         XORs := 34    
+	  25 Input      1 Bit         XORs := 34    
+	  26 Input      1 Bit         XORs := 34    
+	  27 Input      1 Bit         XORs := 34    
+	  28 Input      1 Bit         XORs := 34    
+	  29 Input      1 Bit         XORs := 33    
+	  30 Input      1 Bit         XORs := 33    
+	  31 Input      1 Bit         XORs := 33    
+	  32 Input      1 Bit         XORs := 33    
+	  33 Input      1 Bit         XORs := 33    
+	  34 Input      1 Bit         XORs := 32    
+	  35 Input      1 Bit         XORs := 32    
+	  36 Input      1 Bit         XORs := 32    
+	  68 Input      1 Bit         XORs := 27    
+	  69 Input      1 Bit         XORs := 27    
+	  70 Input      1 Bit         XORs := 27    
+	  71 Input      1 Bit         XORs := 27    
+	  72 Input      1 Bit         XORs := 27    
+	  73 Input      1 Bit         XORs := 27    
+	  74 Input      1 Bit         XORs := 27    
+	  75 Input      1 Bit         XORs := 27    
+	  76 Input      1 Bit         XORs := 26    
+	  77 Input      1 Bit         XORs := 26    
+	  78 Input      1 Bit         XORs := 26    
+	  79 Input      1 Bit         XORs := 26    
+	  80 Input      1 Bit         XORs := 26    
+	  81 Input      1 Bit         XORs := 26    
+	  82 Input      1 Bit         XORs := 26    
+	  83 Input      1 Bit         XORs := 26    
+	  84 Input      1 Bit         XORs := 26    
+	  85 Input      1 Bit         XORs := 25    
+	  86 Input      1 Bit         XORs := 25    
+	  87 Input      1 Bit         XORs := 25    
+	  88 Input      1 Bit         XORs := 25    
+	  89 Input      1 Bit         XORs := 25    
+	  90 Input      1 Bit         XORs := 25    
+	  91 Input      1 Bit         XORs := 25    
+	  92 Input      1 Bit         XORs := 25    
+	  93 Input      1 Bit         XORs := 25    
+	  94 Input      1 Bit         XORs := 24    
+	  95 Input      1 Bit         XORs := 24    
+	  96 Input      1 Bit         XORs := 24    
+	  97 Input      1 Bit         XORs := 24    
+	  98 Input      1 Bit         XORs := 24    
+	  99 Input      1 Bit         XORs := 24    
+	 100 Input      1 Bit         XORs := 24    
+	 101 Input      1 Bit         XORs := 24    
+	 102 Input      1 Bit         XORs := 24    
+	 103 Input      1 Bit         XORs := 24    
+	 104 Input      1 Bit         XORs := 24    
+	 105 Input      1 Bit         XORs := 23    
+	 106 Input      1 Bit         XORs := 23    
+	 107 Input      1 Bit         XORs := 23    
+	 108 Input      1 Bit         XORs := 23    
+	 109 Input      1 Bit         XORs := 23    
+	 110 Input      1 Bit         XORs := 23    
+	 111 Input      1 Bit         XORs := 23    
+	 112 Input      1 Bit         XORs := 23    
+	 113 Input      1 Bit         XORs := 23    
+	 114 Input      1 Bit         XORs := 23    
+	 115 Input      1 Bit         XORs := 22    
+	 116 Input      1 Bit         XORs := 22    
+	 117 Input      1 Bit         XORs := 22    
+	 118 Input      1 Bit         XORs := 22    
+	 119 Input      1 Bit         XORs := 22    
+	 120 Input      1 Bit         XORs := 22    
+	 121 Input      1 Bit         XORs := 22    
+	 122 Input      1 Bit         XORs := 22    
+	 123 Input      1 Bit         XORs := 22    
+	 124 Input      1 Bit         XORs := 22    
+	 125 Input      1 Bit         XORs := 21    
+	 126 Input      1 Bit         XORs := 21    
+	 127 Input      1 Bit         XORs := 21    
+	 128 Input      1 Bit         XORs := 21    
+	 129 Input      1 Bit         XORs := 21    
+	 130 Input      1 Bit         XORs := 21    
+	 131 Input      1 Bit         XORs := 21    
+	 132 Input      1 Bit         XORs := 21    
+	 133 Input      1 Bit         XORs := 21    
+	 134 Input      1 Bit         XORs := 20    
+	 135 Input      1 Bit         XORs := 20    
+	 136 Input      1 Bit         XORs := 20    
+	 137 Input      1 Bit         XORs := 20    
+	 138 Input      1 Bit         XORs := 20    
+	 139 Input      1 Bit         XORs := 20    
+	 140 Input      1 Bit         XORs := 20    
+	 141 Input      1 Bit         XORs := 20    
+	 142 Input      1 Bit         XORs := 20    
+	 143 Input      1 Bit         XORs := 19    
+	 144 Input      1 Bit         XORs := 19    
+	 145 Input      1 Bit         XORs := 19    
+	 146 Input      1 Bit         XORs := 19    
+	 147 Input      1 Bit         XORs := 19    
+	 148 Input      1 Bit         XORs := 19    
+	 149 Input      1 Bit         XORs := 19    
+	 150 Input      1 Bit         XORs := 19    
+	 151 Input      1 Bit         XORs := 18    
+	 152 Input      1 Bit         XORs := 18    
+	 153 Input      1 Bit         XORs := 18    
+	 154 Input      1 Bit         XORs := 18    
+	 155 Input      1 Bit         XORs := 18    
+	 156 Input      1 Bit         XORs := 18    
+	 157 Input      1 Bit         XORs := 18    
+	 158 Input      1 Bit         XORs := 18    
+	  37 Input      1 Bit         XORs := 32    
+	  38 Input      1 Bit         XORs := 32    
+	  39 Input      1 Bit         XORs := 32    
+	  40 Input      1 Bit         XORs := 31    
+	  41 Input      1 Bit         XORs := 31    
+	  42 Input      1 Bit         XORs := 31    
+	  43 Input      1 Bit         XORs := 31    
+	  44 Input      1 Bit         XORs := 31    
+	  45 Input      1 Bit         XORs := 31    
+	  46 Input      1 Bit         XORs := 30    
+	  47 Input      1 Bit         XORs := 30    
+	  48 Input      1 Bit         XORs := 30    
+	  49 Input      1 Bit         XORs := 30    
+	 159 Input      1 Bit         XORs := 17    
+	 160 Input      1 Bit         XORs := 17    
+	 161 Input      1 Bit         XORs := 17    
+	 162 Input      1 Bit         XORs := 17    
+	 163 Input      1 Bit         XORs := 17    
+	 164 Input      1 Bit         XORs := 17    
+	 165 Input      1 Bit         XORs := 17    
+	 172 Input      1 Bit         XORs := 16    
+	 171 Input      1 Bit         XORs := 16    
+	 170 Input      1 Bit         XORs := 16    
+	 169 Input      1 Bit         XORs := 16    
+	 168 Input      1 Bit         XORs := 16    
+	 167 Input      1 Bit         XORs := 16    
+	 166 Input      1 Bit         XORs := 16    
+	 178 Input      1 Bit         XORs := 15    
+	 177 Input      1 Bit         XORs := 15    
+	 176 Input      1 Bit         XORs := 15    
+	 175 Input      1 Bit         XORs := 15    
+	 174 Input      1 Bit         XORs := 15    
+	 173 Input      1 Bit         XORs := 15    
+	 184 Input      1 Bit         XORs := 14    
+	 183 Input      1 Bit         XORs := 14    
+	 182 Input      1 Bit         XORs := 14    
+	 181 Input      1 Bit         XORs := 14    
+	 180 Input      1 Bit         XORs := 14    
+	 179 Input      1 Bit         XORs := 14    
+	 189 Input      1 Bit         XORs := 13    
+	 188 Input      1 Bit         XORs := 13    
+	 187 Input      1 Bit         XORs := 13    
+	 186 Input      1 Bit         XORs := 13    
+	 185 Input      1 Bit         XORs := 13    
+	 194 Input      1 Bit         XORs := 12    
+	 193 Input      1 Bit         XORs := 12    
+	 192 Input      1 Bit         XORs := 12    
+	 191 Input      1 Bit         XORs := 12    
+	 190 Input      1 Bit         XORs := 12    
+	 198 Input      1 Bit         XORs := 11    
+	 197 Input      1 Bit         XORs := 11    
+	 196 Input      1 Bit         XORs := 11    
+	 195 Input      1 Bit         XORs := 11    
+	 202 Input      1 Bit         XORs := 10    
+	 201 Input      1 Bit         XORs := 10    
+	 200 Input      1 Bit         XORs := 10    
+	 199 Input      1 Bit         XORs := 10    
+	 205 Input      1 Bit         XORs := 9     
+	 204 Input      1 Bit         XORs := 9     
+	 203 Input      1 Bit         XORs := 9     
+	 206 Input      1 Bit         XORs := 8     
+	 207 Input      1 Bit         XORs := 8     
+	 208 Input      1 Bit         XORs := 8     
+	 209 Input      1 Bit         XORs := 7     
+	 210 Input      1 Bit         XORs := 7     
+	 211 Input      1 Bit         XORs := 6     
+	 212 Input      1 Bit         XORs := 6     
+	 213 Input      1 Bit         XORs := 6     
+	 214 Input      1 Bit         XORs := 3     
++---Registers : 
+	               25 Bit    Registers := 1     
++---Muxes : 
+	   2 Input   25 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 66 (col length:40)
+BRAMs: 100 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:57:47 ; elapsed = 00:58:33 . Memory (MB): peak = 8699.605 ; gain = 8140.836
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:57:48 ; elapsed = 00:58:35 . Memory (MB): peak = 8699.605 ; gain = 8140.836
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:57:54 ; elapsed = 00:58:41 . Memory (MB): peak = 8699.605 ; gain = 8140.836
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:57:59 ; elapsed = 00:58:46 . Memory (MB): peak = 8699.605 ; gain = 8140.836
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:58:00 ; elapsed = 00:58:46 . Memory (MB): peak = 8699.605 ; gain = 8140.836
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:58:00 ; elapsed = 00:58:47 . Memory (MB): peak = 8699.605 ; gain = 8140.836
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:58:00 ; elapsed = 00:58:47 . Memory (MB): peak = 8699.605 ; gain = 8140.836
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:58:01 ; elapsed = 00:58:48 . Memory (MB): peak = 8699.605 ; gain = 8140.836
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:58:01 ; elapsed = 00:58:48 . Memory (MB): peak = 8699.605 ; gain = 8140.836
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |BUFG |     1|
+|2     |LUT2 |  1360|
+|3     |LUT3 |   746|
+|4     |LUT4 |  2188|
+|5     |LUT5 |  2730|
+|6     |LUT6 |  8080|
+|7     |FDRE |    25|
+|8     |IBUF |    29|
+|9     |OBUF |    25|
++------+-----+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       | 15184|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:58:01 ; elapsed = 00:58:48 . Memory (MB): peak = 8699.605 ; gain = 8140.836
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 1 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:58:01 ; elapsed = 00:58:48 . Memory (MB): peak = 8699.605 ; gain = 8140.836
+Synthesis Optimization Complete : Time (s): cpu = 00:58:01 ; elapsed = 00:58:48 . Memory (MB): peak = 8699.605 ; gain = 8140.836
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.092 . Memory (MB): peak = 8699.605 ; gain = 0.000
+WARNING: [Netlist 29-101] Netlist 'MariusMethod_25' is not ideal for floorplanning, since the cellview 'MariusMethod_25' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 8699.605 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: e0328f76
+INFO: [Common 17-83] Releasing license: Synthesis
+15 Infos, 1 Warnings, 1 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:58:10 ; elapsed = 00:59:26 . Memory (MB): peak = 8699.605 ; gain = 8146.660
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 8699.605 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/arthu/Marius/Marius.runs/synth_1/MariusMethod_25.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file MariusMethod_25_utilization_synth.rpt -pb MariusMethod_25_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Jan  7 11:13:11 2026...

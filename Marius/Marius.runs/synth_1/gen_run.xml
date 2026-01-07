@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7z007sclg225-1" LaunchTime="1767780812" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/example.dcp">
+  <File Type="PA-TCL" Name="MariusMethod_25.tcl"/>
+  <File Type="REPORTS-TCL" Name="MariusMethod_25_reports.tcl"/>
+  <File Type="RDS-RDS" Name="MariusMethod_25.vds"/>
+  <File Type="RDS-PROPCONSTRS" Name="MariusMethod_25_drc_synth.rpt"/>
+  <File Type="RDS-UTIL" Name="MariusMethod_25_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="MariusMethod_25_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="MariusMethod_25.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="MariusMethod_25_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="MariusMethod_25_timing_summary_synth.pb"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/Archive/MariusMethod_27.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Desktop/Archive/MariusMethod_27.vhd"/>
+        <Attr Name="ImportTime" Val="1767741838"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Archive/MariusMethod_28.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Desktop/Archive/MariusMethod_28.vhd"/>
+        <Attr Name="ImportTime" Val="1767741842"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Archive/MariusMethod_29.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Desktop/Archive/MariusMethod_29.vhd"/>
+        <Attr Name="ImportTime" Val="1767741844"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Archive/MariusMethod_30.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Desktop/Archive/MariusMethod_30.vhd"/>
+        <Attr Name="ImportTime" Val="1767741848"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Archive/MariusMethod_31.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Desktop/Archive/MariusMethod_31.vhd"/>
+        <Attr Name="ImportTime" Val="1767741854"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Archive/MariusMethod_32.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Desktop/Archive/MariusMethod_32.vhd"/>
+        <Attr Name="ImportTime" Val="1767741860"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Archive/MariusMethod_4.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Desktop/Archive/MariusMethod_4.vhd"/>
+        <Attr Name="ImportTime" Val="1767741828"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Archive/MariusMethod_5.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Desktop/Archive/MariusMethod_5.vhd"/>
+        <Attr Name="ImportTime" Val="1767741828"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Archive/MariusMethod_6.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Desktop/Archive/MariusMethod_6.vhd"/>
+        <Attr Name="ImportTime" Val="1767741828"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Archive/MariusMethod_7.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Desktop/Archive/MariusMethod_7.vhd"/>
+        <Attr Name="ImportTime" Val="1767741828"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Archive/MariusMethod_8.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Desktop/Archive/MariusMethod_8.vhd"/>
+        <Attr Name="ImportTime" Val="1767741828"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Archive/MariusMethod_9.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Desktop/Archive/MariusMethod_9.vhd"/>
+        <Attr Name="ImportTime" Val="1767741828"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Archive/MariusMethod_10.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Desktop/Archive/MariusMethod_10.vhd"/>
+        <Attr Name="ImportTime" Val="1767741828"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Archive/MariusMethod_11.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Desktop/Archive/MariusMethod_11.vhd"/>
+        <Attr Name="ImportTime" Val="1767741828"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Archive/MariusMethod_12.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Desktop/Archive/MariusMethod_12.vhd"/>
+        <Attr Name="ImportTime" Val="1767741828"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Archive/MariusMethod_13.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Desktop/Archive/MariusMethod_13.vhd"/>
+        <Attr Name="ImportTime" Val="1767741828"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Archive/MariusMethod_14.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Desktop/Archive/MariusMethod_14.vhd"/>
+        <Attr Name="ImportTime" Val="1767741828"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Archive/MariusMethod_15.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Desktop/Archive/MariusMethod_15.vhd"/>
+        <Attr Name="ImportTime" Val="1767741828"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Archive/MariusMethod_16.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Desktop/Archive/MariusMethod_16.vhd"/>
+        <Attr Name="ImportTime" Val="1767741828"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Archive/MariusMethod_17.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Desktop/Archive/MariusMethod_17.vhd"/>
+        <Attr Name="ImportTime" Val="1767741828"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Archive/MariusMethod_18.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Desktop/Archive/MariusMethod_18.vhd"/>
+        <Attr Name="ImportTime" Val="1767741828"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Archive/MariusMethod_19.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Desktop/Archive/MariusMethod_19.vhd"/>
+        <Attr Name="ImportTime" Val="1767741830"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Archive/MariusMethod_20.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Desktop/Archive/MariusMethod_20.vhd"/>
+        <Attr Name="ImportTime" Val="1767741830"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Archive/MariusMethod_21.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Desktop/Archive/MariusMethod_21.vhd"/>
+        <Attr Name="ImportTime" Val="1767741830"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Archive/MariusMethod_22.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Desktop/Archive/MariusMethod_22.vhd"/>
+        <Attr Name="ImportTime" Val="1767741830"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Archive/MariusMethod_23.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Desktop/Archive/MariusMethod_23.vhd"/>
+        <Attr Name="ImportTime" Val="1767741832"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Archive/MariusMethod_24.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Desktop/Archive/MariusMethod_24.vhd"/>
+        <Attr Name="ImportTime" Val="1767741832"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Archive/MariusMethod_25.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Desktop/Archive/MariusMethod_25.vhd"/>
+        <Attr Name="ImportTime" Val="1767741834"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Archive/MariusMethod_26.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Desktop/Archive/MariusMethod_26.vhd"/>
+        <Attr Name="ImportTime" Val="1767741836"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="MariusMethod_25"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
+    <Filter Type="Utils"/>
+    <File Path="$PSRCDIR/utils_1/imports/synth_1/example.dcp">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="AutoDcp" Val="1"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>

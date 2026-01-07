@@ -1,0 +1,650 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity MariusMethod_11 is
+  port (
+    clk  : in  std_logic;
+    rst  : in  std_logic;
+    load : in  std_logic;
+    en   : in  std_logic;
+    a    : in  std_logic_vector(10 downto 0);
+    s    : out std_logic_vector(10 downto 0)
+  );
+end MariusMethod_11;
+
+architecture rtl of MariusMethod_11 is
+  signal x_reg  : std_logic_vector(10 downto 0) := (others => '0');
+  signal x_next : std_logic_vector(10 downto 0);
+
+signal s_1_10_11 : std_logic;
+signal s_1_9_11 : std_logic;
+signal s_1_8_11 : std_logic;
+signal s_1_7_11 : std_logic;
+signal s_1_6_11 : std_logic;
+signal s_1_5_11 : std_logic;
+signal s_1_4_11 : std_logic;
+signal s_1_3_11 : std_logic;
+signal s_1_2_11 : std_logic;
+signal s_1_1_11 : std_logic;
+signal s_1_1_10 : std_logic;
+signal s_1_1_9 : std_logic;
+signal s_1_1_8 : std_logic;
+signal s_1_1_7 : std_logic;
+signal s_1_1_6 : std_logic;
+signal s_1_1_5 : std_logic;
+signal s_1_1_4 : std_logic;
+signal s_1_1_3 : std_logic;
+signal s_1_1_2 : std_logic;
+signal s_1_9_10 : std_logic;
+signal s_1_8_10 : std_logic;
+signal s_1_7_10 : std_logic;
+signal s_1_6_10 : std_logic;
+signal s_1_5_10 : std_logic;
+signal s_1_4_10 : std_logic;
+signal s_1_3_10 : std_logic;
+signal s_1_2_10 : std_logic;
+signal s_1_2_9 : std_logic;
+signal s_1_2_8 : std_logic;
+signal s_1_2_7 : std_logic;
+signal s_1_2_6 : std_logic;
+signal s_1_2_5 : std_logic;
+signal s_1_2_4 : std_logic;
+signal s_1_2_3 : std_logic;
+signal s_1_8_9 : std_logic;
+signal s_1_7_9 : std_logic;
+signal s_1_6_9 : std_logic;
+signal s_1_5_9 : std_logic;
+signal s_1_4_9 : std_logic;
+signal s_1_3_9 : std_logic;
+signal s_1_3_8 : std_logic;
+signal s_1_3_7 : std_logic;
+signal s_1_3_6 : std_logic;
+signal s_1_3_5 : std_logic;
+signal s_1_3_4 : std_logic;
+signal s_1_7_8 : std_logic;
+signal s_1_6_8 : std_logic;
+signal s_1_5_8 : std_logic;
+signal s_1_4_8 : std_logic;
+signal s_1_4_7 : std_logic;
+signal s_1_4_6 : std_logic;
+signal s_1_4_5 : std_logic;
+signal s_1_6_7 : std_logic;
+signal s_1_5_7 : std_logic;
+signal s_1_5_6 : std_logic;
+signal s_2_8_11 : std_logic;
+signal s_2_7_11 : std_logic;
+signal s_2_6_11 : std_logic;
+signal s_2_5_11 : std_logic;
+signal s_2_4_11 : std_logic;
+signal s_2_3_11 : std_logic;
+signal s_2_2_11 : std_logic;
+signal s_2_1_11 : std_logic;
+signal s_2_1_10 : std_logic;
+signal s_2_1_9 : std_logic;
+signal s_2_1_8 : std_logic;
+signal s_2_1_7 : std_logic;
+signal s_2_1_6 : std_logic;
+signal s_2_1_5 : std_logic;
+signal s_2_1_4 : std_logic;
+signal s_2_1_3 : std_logic;
+signal s_2_9_10 : std_logic;
+signal s_2_8_10 : std_logic;
+signal s_2_7_10 : std_logic;
+signal s_2_6_10 : std_logic;
+signal s_2_5_10 : std_logic;
+signal s_2_4_10 : std_logic;
+signal s_2_3_10 : std_logic;
+signal s_2_2_10 : std_logic;
+signal s_2_2_9 : std_logic;
+signal s_2_2_8 : std_logic;
+signal s_2_2_7 : std_logic;
+signal s_2_2_6 : std_logic;
+signal s_2_2_5 : std_logic;
+signal s_2_2_4 : std_logic;
+signal s_2_2_3 : std_logic;
+signal s_2_8_9 : std_logic;
+signal s_2_7_9 : std_logic;
+signal s_2_6_9 : std_logic;
+signal s_2_5_9 : std_logic;
+signal s_2_4_9 : std_logic;
+signal s_2_3_9 : std_logic;
+signal s_2_3_8 : std_logic;
+signal s_2_3_7 : std_logic;
+signal s_2_3_6 : std_logic;
+signal s_2_3_5 : std_logic;
+signal s_2_3_4 : std_logic;
+signal s_2_7_8 : std_logic;
+signal s_2_6_8 : std_logic;
+signal s_2_5_8 : std_logic;
+signal s_2_4_8 : std_logic;
+signal s_2_4_7 : std_logic;
+signal s_2_4_6 : std_logic;
+signal s_2_4_5 : std_logic;
+signal s_2_6_7 : std_logic;
+signal s_2_5_7 : std_logic;
+signal s_2_5_6 : std_logic;
+signal s_3_6_11 : std_logic;
+signal s_3_5_11 : std_logic;
+signal s_3_4_11 : std_logic;
+signal s_3_3_11 : std_logic;
+signal s_3_2_11 : std_logic;
+signal s_3_1_11 : std_logic;
+signal s_3_1_10 : std_logic;
+signal s_3_1_9 : std_logic;
+signal s_3_1_8 : std_logic;
+signal s_3_1_7 : std_logic;
+signal s_3_1_6 : std_logic;
+signal s_3_1_5 : std_logic;
+signal s_3_1_4 : std_logic;
+signal s_3_6_10 : std_logic;
+signal s_3_5_10 : std_logic;
+signal s_3_4_10 : std_logic;
+signal s_3_3_10 : std_logic;
+signal s_3_2_10 : std_logic;
+signal s_3_2_9 : std_logic;
+signal s_3_2_8 : std_logic;
+signal s_3_2_7 : std_logic;
+signal s_3_2_6 : std_logic;
+signal s_3_2_5 : std_logic;
+signal s_3_2_4 : std_logic;
+signal s_3_2_3 : std_logic;
+signal s_3_6_9 : std_logic;
+signal s_3_5_9 : std_logic;
+signal s_3_4_9 : std_logic;
+signal s_3_3_9 : std_logic;
+signal s_3_3_8 : std_logic;
+signal s_3_3_7 : std_logic;
+signal s_3_3_6 : std_logic;
+signal s_3_3_5 : std_logic;
+signal s_3_3_4 : std_logic;
+signal s_4_1_6 : std_logic;
+signal s_4_1_5 : std_logic;
+signal s_3_7_8 : std_logic;
+signal s_3_6_8 : std_logic;
+signal s_3_5_8 : std_logic;
+signal s_3_4_8 : std_logic;
+signal s_3_4_7 : std_logic;
+signal s_3_4_6 : std_logic;
+signal s_3_4_5 : std_logic;
+signal s_4_1_8 : std_logic;
+signal s_4_1_7 : std_logic;
+signal s_4_2_5 : std_logic;
+signal s_4_2_4 : std_logic;
+signal s_4_4_11 : std_logic;
+signal s_3_6_7 : std_logic;
+signal s_3_5_7 : std_logic;
+signal s_3_5_6 : std_logic;
+signal s_4_1_10 : std_logic;
+signal s_4_1_9 : std_logic;
+signal s_4_2_7 : std_logic;
+signal s_4_2_6 : std_logic;
+signal s_4_3_4 : std_logic;
+signal s_5_1_6 : std_logic;
+signal s_4_5_10 : std_logic;
+signal s_4_3_11 : std_logic;
+signal s_4_2_11 : std_logic;
+signal s_4_1_11 : std_logic;
+signal s_4_2_9 : std_logic;
+signal s_4_2_8 : std_logic;
+signal s_4_3_6 : std_logic;
+signal s_4_3_5 : std_logic;
+signal s_5_1_7 : std_logic;
+signal s_5_2_5 : std_logic;
+signal s_4_4_10 : std_logic;
+signal s_4_3_10 : std_logic;
+signal s_4_2_10 : std_logic;
+signal s_4_3_8 : std_logic;
+signal s_4_3_7 : std_logic;
+signal s_4_4_5 : std_logic;
+signal s_5_1_8 : std_logic;
+signal s_5_2_6 : std_logic;
+signal s_5_3_4 : std_logic;
+signal s_4_5_9 : std_logic;
+signal s_4_4_9 : std_logic;
+signal s_4_3_9 : std_logic;
+signal s_4_4_7 : std_logic;
+signal s_4_4_6 : std_logic;
+signal s_5_1_9 : std_logic;
+signal s_5_2_7 : std_logic;
+signal s_5_3_5 : std_logic;
+signal s_6_1_7 : std_logic;
+signal s_4_6_8 : std_logic;
+signal s_4_5_8 : std_logic;
+signal s_4_4_8 : std_logic;
+signal s_4_5_6 : std_logic;
+signal s_5_1_10 : std_logic;
+signal s_5_2_8 : std_logic;
+signal s_5_3_6 : std_logic;
+signal s_6_1_8 : std_logic;
+signal s_6_2_6 : std_logic;
+signal s_4_6_7 : std_logic;
+signal s_4_5_7 : std_logic;
+signal s_5_1_11 : std_logic;
+signal s_5_2_9 : std_logic;
+signal s_5_3_7 : std_logic;
+signal s_5_4_5 : std_logic;
+signal s_6_2_7 : std_logic;
+signal s_6_3_5 : std_logic;
+signal s_5_3_11 : std_logic;
+signal s_5_2_11 : std_logic;
+signal s_5_2_10 : std_logic;
+signal s_5_3_8 : std_logic;
+signal s_5_4_6 : std_logic;
+signal s_6_1_9 : std_logic;
+signal s_6_3_6 : std_logic;
+signal s_7_1_8 : std_logic;
+signal s_5_4_10 : std_logic;
+signal s_5_3_10 : std_logic;
+signal s_5_3_9 : std_logic;
+signal s_5_4_7 : std_logic;
+signal s_6_1_10 : std_logic;
+signal s_6_2_8 : std_logic;
+signal s_6_4_5 : std_logic;
+signal s_7_2_7 : std_logic;
+signal s_5_4_9 : std_logic;
+signal s_5_4_8 : std_logic;
+signal s_5_5_6 : std_logic;
+signal s_6_2_9 : std_logic;
+signal s_6_3_7 : std_logic;
+signal s_7_1_9 : std_logic;
+signal s_7_3_6 : std_logic;
+signal s_5_5_8 : std_logic;
+signal s_5_5_7 : std_logic;
+signal s_6_1_11 : std_logic;
+signal s_6_3_8 : std_logic;
+signal s_6_4_6 : std_logic;
+signal s_7_2_8 : std_logic;
+signal s_7_4_5 : std_logic;
+signal s_5_6_7 : std_logic;
+signal s_6_2_11 : std_logic;
+signal s_6_2_10 : std_logic;
+signal s_6_4_7 : std_logic;
+signal s_7_1_10 : std_logic;
+signal s_7_3_7 : std_logic;
+signal s_8_1_9 : std_logic;
+signal s_6_3_10 : std_logic;
+signal s_6_3_9 : std_logic;
+signal s_6_5_6 : std_logic;
+signal s_7_2_9 : std_logic;
+signal s_7_4_6 : std_logic;
+signal s_8_2_8 : std_logic;
+signal s_6_4_9 : std_logic;
+signal s_6_4_8 : std_logic;
+signal s_7_1_11 : std_logic;
+signal s_7_3_8 : std_logic;
+signal s_8_1_10 : std_logic;
+signal s_8_3_7 : std_logic;
+signal s_6_5_7 : std_logic;
+signal s_7_2_10 : std_logic;
+signal s_7_4_7 : std_logic;
+signal s_8_2_9 : std_logic;
+signal s_8_4_6 : std_logic;
+signal s_7_2_11 : std_logic;
+signal s_7_3_9 : std_logic;
+signal s_7_5_6 : std_logic;
+signal s_8_3_8 : std_logic;
+signal s_9_1_10 : std_logic;
+signal s_7_4_8 : std_logic;
+signal s_8_1_11 : std_logic;
+signal s_8_4_7 : std_logic;
+signal s_9_2_9 : std_logic;
+signal s_8_2_10 : std_logic;
+signal s_8_5_6 : std_logic;
+signal s_9_3_8 : std_logic;
+begin
+    s_1_10_11 <= x_reg(1) xor x_reg(0);
+
+    s_1_9_11 <= x_reg(2) xor x_reg(0);
+
+    s_1_8_11 <= x_reg(3) xor x_reg(0);
+
+    s_1_9_10 <= x_reg(2) xor x_reg(1);
+
+    s_1_7_11 <= x_reg(4) xor x_reg(0);
+
+    s_1_8_10 <= x_reg(3) xor x_reg(1);
+
+   s_2_8_11 <=  (s_1_8_11) and ( (s_1_9_10)); 
+   s_2_9_10 <=  '0';
+    s_1_6_11 <= x_reg(5) xor x_reg(0);
+
+    s_1_7_10 <= x_reg(4) xor x_reg(1);
+
+    s_1_8_9 <= x_reg(3) xor x_reg(2);
+
+   s_2_7_11 <=  (s_1_7_11) and ( (s_1_8_10) xor (s_2_8_11) xor (s_2_9_10)); 
+   s_2_8_10 <=  (s_1_8_10) and ( (s_2_8_11) xor (s_2_9_10)); 
+    s_1_5_11 <= x_reg(6) xor x_reg(0);
+
+    s_1_6_10 <= x_reg(5) xor x_reg(1);
+
+    s_1_7_9 <= x_reg(4) xor x_reg(2);
+
+   s_2_6_11 <=  (s_1_6_11) and ( (s_1_7_10) xor (s_1_8_9) xor (s_2_7_11) xor (s_2_8_10)); 
+   s_2_7_10 <=  (s_1_7_10) and ( (s_1_8_9) xor (s_2_7_11) xor (s_2_8_10)); 
+   s_2_8_9 <=  (s_1_8_9) and ( (s_2_7_11) xor (s_2_8_10)); 
+    s_1_4_11 <= x_reg(7) xor x_reg(0);
+
+    s_1_5_10 <= x_reg(6) xor x_reg(1);
+
+    s_1_6_9 <= x_reg(5) xor x_reg(2);
+
+    s_1_7_8 <= x_reg(4) xor x_reg(3);
+
+   s_2_5_11 <=  (s_1_5_11) and ( (s_1_6_10) xor (s_1_7_9) xor (s_2_6_11) xor (s_2_7_10) xor (s_2_8_9)); 
+   s_2_6_10 <=  (s_1_6_10) and ( (s_1_7_9) xor (s_2_6_11) xor (s_2_7_10) xor (s_2_8_9)); 
+   s_2_7_9 <=  (s_1_7_9) and ( (s_2_6_11) xor (s_2_7_10) xor (s_2_8_9)); 
+   s_3_6_11 <=  (s_2_6_11) and ( (s_2_7_10) xor (s_2_8_9)); 
+    s_1_3_11 <= x_reg(8) xor x_reg(0);
+
+    s_1_4_10 <= x_reg(7) xor x_reg(1);
+
+    s_1_5_9 <= x_reg(6) xor x_reg(2);
+
+    s_1_6_8 <= x_reg(5) xor x_reg(3);
+
+   s_2_4_11 <=  (s_1_4_11) and ( (s_1_5_10) xor (s_1_6_9) xor (s_1_7_8) xor (s_2_5_11) xor (s_2_6_10) xor (s_2_7_9) xor (s_3_6_11)); 
+   s_2_5_10 <=  (s_1_5_10) and ( (s_1_6_9) xor (s_1_7_8) xor (s_2_5_11) xor (s_2_6_10) xor (s_2_7_9) xor (s_3_6_11)); 
+   s_2_6_9 <=  (s_1_6_9) and ( (s_1_7_8) xor (s_2_5_11) xor (s_2_6_10) xor (s_2_7_9) xor (s_3_6_11)); 
+   s_2_7_8 <=  (s_1_7_8) and ( (s_2_5_11) xor (s_2_6_10) xor (s_2_7_9) xor (s_3_6_11)); 
+   s_3_5_11 <=  (s_2_5_11) and ( (s_2_6_10) xor (s_2_7_9) xor (s_3_6_11)); 
+   s_3_6_10 <=  (s_2_6_10) and ( (s_2_7_9) xor (s_3_6_11)); 
+    s_1_2_11 <= x_reg(9) xor x_reg(0);
+
+    s_1_3_10 <= x_reg(8) xor x_reg(1);
+
+    s_1_4_9 <= x_reg(7) xor x_reg(2);
+
+    s_1_5_8 <= x_reg(6) xor x_reg(3);
+
+    s_1_6_7 <= x_reg(5) xor x_reg(4);
+
+   s_2_3_11 <=  (s_1_3_11) and ( (s_1_4_10) xor (s_1_5_9) xor (s_1_6_8) xor (s_2_4_11) xor (s_2_5_10) xor (s_2_6_9) xor (s_2_7_8) xor (s_3_5_11) xor (s_3_6_10)); 
+   s_2_4_10 <=  (s_1_4_10) and ( (s_1_5_9) xor (s_1_6_8) xor (s_2_4_11) xor (s_2_5_10) xor (s_2_6_9) xor (s_2_7_8) xor (s_3_5_11) xor (s_3_6_10)); 
+   s_2_5_9 <=  (s_1_5_9) and ( (s_1_6_8) xor (s_2_4_11) xor (s_2_5_10) xor (s_2_6_9) xor (s_2_7_8) xor (s_3_5_11) xor (s_3_6_10)); 
+   s_2_6_8 <=  (s_1_6_8) and ( (s_2_4_11) xor (s_2_5_10) xor (s_2_6_9) xor (s_2_7_8) xor (s_3_5_11) xor (s_3_6_10)); 
+   s_3_4_11 <=  (s_2_4_11) and ( (s_2_5_10) xor (s_2_6_9) xor (s_2_7_8) xor (s_3_5_11) xor (s_3_6_10)); 
+   s_3_5_10 <=  (s_2_5_10) and ( (s_2_6_9) xor (s_2_7_8) xor (s_3_5_11) xor (s_3_6_10)); 
+   s_3_6_9 <=  (s_2_6_9) and ( (s_2_7_8) xor (s_3_5_11) xor (s_3_6_10)); 
+   s_3_7_8 <=  (s_2_7_8) and ( (s_3_5_11) xor (s_3_6_10)); 
+    s_1_1_11 <= x_reg(10) xor x_reg(0);
+
+    s_1_2_10 <= x_reg(9) xor x_reg(1);
+
+    s_1_3_9 <= x_reg(8) xor x_reg(2);
+
+    s_1_4_8 <= x_reg(7) xor x_reg(3);
+
+    s_1_5_7 <= x_reg(6) xor x_reg(4);
+
+   s_2_2_11 <=  (s_1_2_11) and ( (s_1_3_10) xor (s_1_4_9) xor (s_1_5_8) xor (s_1_6_7) xor (s_2_3_11) xor (s_2_4_10) xor (s_2_5_9) xor (s_2_6_8) xor (s_3_4_11) xor (s_3_5_10) xor (s_3_6_9) xor (s_3_7_8)); 
+   s_2_3_10 <=  (s_1_3_10) and ( (s_1_4_9) xor (s_1_5_8) xor (s_1_6_7) xor (s_2_3_11) xor (s_2_4_10) xor (s_2_5_9) xor (s_2_6_8) xor (s_3_4_11) xor (s_3_5_10) xor (s_3_6_9) xor (s_3_7_8)); 
+   s_2_4_9 <=  (s_1_4_9) and ( (s_1_5_8) xor (s_1_6_7) xor (s_2_3_11) xor (s_2_4_10) xor (s_2_5_9) xor (s_2_6_8) xor (s_3_4_11) xor (s_3_5_10) xor (s_3_6_9) xor (s_3_7_8)); 
+   s_2_5_8 <=  (s_1_5_8) and ( (s_1_6_7) xor (s_2_3_11) xor (s_2_4_10) xor (s_2_5_9) xor (s_2_6_8) xor (s_3_4_11) xor (s_3_5_10) xor (s_3_6_9) xor (s_3_7_8)); 
+   s_2_6_7 <=  (s_1_6_7) and ( (s_2_3_11) xor (s_2_4_10) xor (s_2_5_9) xor (s_2_6_8) xor (s_3_4_11) xor (s_3_5_10) xor (s_3_6_9) xor (s_3_7_8)); 
+   s_3_3_11 <=  (s_2_3_11) and ( (s_2_4_10) xor (s_2_5_9) xor (s_2_6_8) xor (s_3_4_11) xor (s_3_5_10) xor (s_3_6_9) xor (s_3_7_8)); 
+   s_3_4_10 <=  (s_2_4_10) and ( (s_2_5_9) xor (s_2_6_8) xor (s_3_4_11) xor (s_3_5_10) xor (s_3_6_9) xor (s_3_7_8)); 
+   s_3_5_9 <=  (s_2_5_9) and ( (s_2_6_8) xor (s_3_4_11) xor (s_3_5_10) xor (s_3_6_9) xor (s_3_7_8)); 
+   s_3_6_8 <=  (s_2_6_8) and ( (s_3_4_11) xor (s_3_5_10) xor (s_3_6_9) xor (s_3_7_8)); 
+   s_4_4_11 <=  (s_3_4_11) and ( (s_3_5_10) xor (s_3_6_9) xor (s_3_7_8)); 
+   s_4_5_10 <=  (s_3_5_10) and ( (s_3_6_9) xor (s_3_7_8)); 
+    s_1_1_10 <= x_reg(10) xor x_reg(1);
+
+    s_1_2_9 <= x_reg(9) xor x_reg(2);
+
+    s_1_3_8 <= x_reg(8) xor x_reg(3);
+
+    s_1_4_7 <= x_reg(7) xor x_reg(4);
+
+    s_1_5_6 <= x_reg(6) xor x_reg(5);
+
+   s_2_1_11 <=  (s_1_1_11) and ( (s_1_2_10) xor (s_1_3_9) xor (s_1_4_8) xor (s_1_5_7) xor (s_2_2_11) xor (s_2_3_10) xor (s_2_4_9) xor (s_2_5_8) xor (s_2_6_7) xor (s_3_3_11) xor (s_3_4_10) xor (s_3_5_9) xor (s_3_6_8) xor (s_4_4_11) xor (s_4_5_10)); 
+   s_2_2_10 <=  (s_1_2_10) and ( (s_1_3_9) xor (s_1_4_8) xor (s_1_5_7) xor (s_2_2_11) xor (s_2_3_10) xor (s_2_4_9) xor (s_2_5_8) xor (s_2_6_7) xor (s_3_3_11) xor (s_3_4_10) xor (s_3_5_9) xor (s_3_6_8) xor (s_4_4_11) xor (s_4_5_10)); 
+   s_2_3_9 <=  (s_1_3_9) and ( (s_1_4_8) xor (s_1_5_7) xor (s_2_2_11) xor (s_2_3_10) xor (s_2_4_9) xor (s_2_5_8) xor (s_2_6_7) xor (s_3_3_11) xor (s_3_4_10) xor (s_3_5_9) xor (s_3_6_8) xor (s_4_4_11) xor (s_4_5_10)); 
+   s_2_4_8 <=  (s_1_4_8) and ( (s_1_5_7) xor (s_2_2_11) xor (s_2_3_10) xor (s_2_4_9) xor (s_2_5_8) xor (s_2_6_7) xor (s_3_3_11) xor (s_3_4_10) xor (s_3_5_9) xor (s_3_6_8) xor (s_4_4_11) xor (s_4_5_10)); 
+   s_2_5_7 <=  (s_1_5_7) and ( (s_2_2_11) xor (s_2_3_10) xor (s_2_4_9) xor (s_2_5_8) xor (s_2_6_7) xor (s_3_3_11) xor (s_3_4_10) xor (s_3_5_9) xor (s_3_6_8) xor (s_4_4_11) xor (s_4_5_10)); 
+   s_3_2_11 <=  (s_2_2_11) and ( (s_2_3_10) xor (s_2_4_9) xor (s_2_5_8) xor (s_2_6_7) xor (s_3_3_11) xor (s_3_4_10) xor (s_3_5_9) xor (s_3_6_8) xor (s_4_4_11) xor (s_4_5_10)); 
+   s_3_3_10 <=  (s_2_3_10) and ( (s_2_4_9) xor (s_2_5_8) xor (s_2_6_7) xor (s_3_3_11) xor (s_3_4_10) xor (s_3_5_9) xor (s_3_6_8) xor (s_4_4_11) xor (s_4_5_10)); 
+   s_3_4_9 <=  (s_2_4_9) and ( (s_2_5_8) xor (s_2_6_7) xor (s_3_3_11) xor (s_3_4_10) xor (s_3_5_9) xor (s_3_6_8) xor (s_4_4_11) xor (s_4_5_10)); 
+   s_3_5_8 <=  (s_2_5_8) and ( (s_2_6_7) xor (s_3_3_11) xor (s_3_4_10) xor (s_3_5_9) xor (s_3_6_8) xor (s_4_4_11) xor (s_4_5_10)); 
+   s_3_6_7 <=  (s_2_6_7) and ( (s_3_3_11) xor (s_3_4_10) xor (s_3_5_9) xor (s_3_6_8) xor (s_4_4_11) xor (s_4_5_10)); 
+   s_4_3_11 <=  (s_3_3_11) and ( (s_3_4_10) xor (s_3_5_9) xor (s_3_6_8) xor (s_4_4_11) xor (s_4_5_10)); 
+   s_4_4_10 <=  (s_3_4_10) and ( (s_3_5_9) xor (s_3_6_8) xor (s_4_4_11) xor (s_4_5_10)); 
+   s_4_5_9 <=  (s_3_5_9) and ( (s_3_6_8) xor (s_4_4_11) xor (s_4_5_10)); 
+   s_4_6_8 <=  (s_3_6_8) and ( (s_4_4_11) xor (s_4_5_10)); 
+    s_1_1_9 <= x_reg(10) xor x_reg(2);
+
+    s_1_2_8 <= x_reg(9) xor x_reg(3);
+
+    s_1_3_7 <= x_reg(8) xor x_reg(4);
+
+    s_1_4_6 <= x_reg(7) xor x_reg(5);
+
+   s_2_1_10 <=  (s_1_1_10) and ( (s_1_2_9) xor (s_1_3_8) xor (s_1_4_7) xor (s_1_5_6) xor (s_2_1_11) xor (s_2_2_10) xor (s_2_3_9) xor (s_2_4_8) xor (s_2_5_7) xor (s_3_2_11) xor (s_3_3_10) xor (s_3_4_9) xor (s_3_5_8) xor (s_3_6_7) xor (s_4_3_11) xor (s_4_4_10) xor (s_4_5_9) xor (s_4_6_8)); 
+   s_2_2_9 <=  (s_1_2_9) and ( (s_1_3_8) xor (s_1_4_7) xor (s_1_5_6) xor (s_2_1_11) xor (s_2_2_10) xor (s_2_3_9) xor (s_2_4_8) xor (s_2_5_7) xor (s_3_2_11) xor (s_3_3_10) xor (s_3_4_9) xor (s_3_5_8) xor (s_3_6_7) xor (s_4_3_11) xor (s_4_4_10) xor (s_4_5_9) xor (s_4_6_8)); 
+   s_2_3_8 <=  (s_1_3_8) and ( (s_1_4_7) xor (s_1_5_6) xor (s_2_1_11) xor (s_2_2_10) xor (s_2_3_9) xor (s_2_4_8) xor (s_2_5_7) xor (s_3_2_11) xor (s_3_3_10) xor (s_3_4_9) xor (s_3_5_8) xor (s_3_6_7) xor (s_4_3_11) xor (s_4_4_10) xor (s_4_5_9) xor (s_4_6_8)); 
+   s_2_4_7 <=  (s_1_4_7) and ( (s_1_5_6) xor (s_2_1_11) xor (s_2_2_10) xor (s_2_3_9) xor (s_2_4_8) xor (s_2_5_7) xor (s_3_2_11) xor (s_3_3_10) xor (s_3_4_9) xor (s_3_5_8) xor (s_3_6_7) xor (s_4_3_11) xor (s_4_4_10) xor (s_4_5_9) xor (s_4_6_8)); 
+   s_2_5_6 <=  (s_1_5_6) and ( (s_2_1_11) xor (s_2_2_10) xor (s_2_3_9) xor (s_2_4_8) xor (s_2_5_7) xor (s_3_2_11) xor (s_3_3_10) xor (s_3_4_9) xor (s_3_5_8) xor (s_3_6_7) xor (s_4_3_11) xor (s_4_4_10) xor (s_4_5_9) xor (s_4_6_8)); 
+   s_3_1_11 <=  (s_2_1_11) and ( (s_2_2_10) xor (s_2_3_9) xor (s_2_4_8) xor (s_2_5_7) xor (s_3_2_11) xor (s_3_3_10) xor (s_3_4_9) xor (s_3_5_8) xor (s_3_6_7) xor (s_4_3_11) xor (s_4_4_10) xor (s_4_5_9) xor (s_4_6_8)); 
+   s_3_2_10 <=  (s_2_2_10) and ( (s_2_3_9) xor (s_2_4_8) xor (s_2_5_7) xor (s_3_2_11) xor (s_3_3_10) xor (s_3_4_9) xor (s_3_5_8) xor (s_3_6_7) xor (s_4_3_11) xor (s_4_4_10) xor (s_4_5_9) xor (s_4_6_8)); 
+   s_3_3_9 <=  (s_2_3_9) and ( (s_2_4_8) xor (s_2_5_7) xor (s_3_2_11) xor (s_3_3_10) xor (s_3_4_9) xor (s_3_5_8) xor (s_3_6_7) xor (s_4_3_11) xor (s_4_4_10) xor (s_4_5_9) xor (s_4_6_8)); 
+   s_3_4_8 <=  (s_2_4_8) and ( (s_2_5_7) xor (s_3_2_11) xor (s_3_3_10) xor (s_3_4_9) xor (s_3_5_8) xor (s_3_6_7) xor (s_4_3_11) xor (s_4_4_10) xor (s_4_5_9) xor (s_4_6_8)); 
+   s_3_5_7 <=  (s_2_5_7) and ( (s_3_2_11) xor (s_3_3_10) xor (s_3_4_9) xor (s_3_5_8) xor (s_3_6_7) xor (s_4_3_11) xor (s_4_4_10) xor (s_4_5_9) xor (s_4_6_8)); 
+   s_4_2_11 <=  (s_3_2_11) and ( (s_3_3_10) xor (s_3_4_9) xor (s_3_5_8) xor (s_3_6_7) xor (s_4_3_11) xor (s_4_4_10) xor (s_4_5_9) xor (s_4_6_8)); 
+   s_4_3_10 <=  (s_3_3_10) and ( (s_3_4_9) xor (s_3_5_8) xor (s_3_6_7) xor (s_4_3_11) xor (s_4_4_10) xor (s_4_5_9) xor (s_4_6_8)); 
+   s_4_4_9 <=  (s_3_4_9) and ( (s_3_5_8) xor (s_3_6_7) xor (s_4_3_11) xor (s_4_4_10) xor (s_4_5_9) xor (s_4_6_8)); 
+   s_4_5_8 <=  (s_3_5_8) and ( (s_3_6_7) xor (s_4_3_11) xor (s_4_4_10) xor (s_4_5_9) xor (s_4_6_8)); 
+   s_4_6_7 <=  (s_3_6_7) and ( (s_4_3_11) xor (s_4_4_10) xor (s_4_5_9) xor (s_4_6_8)); 
+   s_5_3_11 <=  (s_4_3_11) and ( (s_4_4_10) xor (s_4_5_9) xor (s_4_6_8)); 
+   s_5_4_10 <=  (s_4_4_10) and ( (s_4_5_9) xor (s_4_6_8)); 
+    s_1_1_8 <= x_reg(10) xor x_reg(3);
+
+    s_1_2_7 <= x_reg(9) xor x_reg(4);
+
+    s_1_3_6 <= x_reg(8) xor x_reg(5);
+
+    s_1_4_5 <= x_reg(7) xor x_reg(6);
+
+   s_2_1_9 <=  (s_1_1_9) and ( (s_1_2_8) xor (s_1_3_7) xor (s_1_4_6) xor (s_2_1_10) xor (s_2_2_9) xor (s_2_3_8) xor (s_2_4_7) xor (s_2_5_6) xor (s_3_1_11) xor (s_3_2_10) xor (s_3_3_9) xor (s_3_4_8) xor (s_3_5_7) xor (s_4_2_11) xor (s_4_3_10) xor (s_4_4_9) xor (s_4_5_8) xor (s_4_6_7) xor (s_5_3_11) xor (s_5_4_10)); 
+   s_2_2_8 <=  (s_1_2_8) and ( (s_1_3_7) xor (s_1_4_6) xor (s_2_1_10) xor (s_2_2_9) xor (s_2_3_8) xor (s_2_4_7) xor (s_2_5_6) xor (s_3_1_11) xor (s_3_2_10) xor (s_3_3_9) xor (s_3_4_8) xor (s_3_5_7) xor (s_4_2_11) xor (s_4_3_10) xor (s_4_4_9) xor (s_4_5_8) xor (s_4_6_7) xor (s_5_3_11) xor (s_5_4_10)); 
+   s_2_3_7 <=  (s_1_3_7) and ( (s_1_4_6) xor (s_2_1_10) xor (s_2_2_9) xor (s_2_3_8) xor (s_2_4_7) xor (s_2_5_6) xor (s_3_1_11) xor (s_3_2_10) xor (s_3_3_9) xor (s_3_4_8) xor (s_3_5_7) xor (s_4_2_11) xor (s_4_3_10) xor (s_4_4_9) xor (s_4_5_8) xor (s_4_6_7) xor (s_5_3_11) xor (s_5_4_10)); 
+   s_2_4_6 <=  (s_1_4_6) and ( (s_2_1_10) xor (s_2_2_9) xor (s_2_3_8) xor (s_2_4_7) xor (s_2_5_6) xor (s_3_1_11) xor (s_3_2_10) xor (s_3_3_9) xor (s_3_4_8) xor (s_3_5_7) xor (s_4_2_11) xor (s_4_3_10) xor (s_4_4_9) xor (s_4_5_8) xor (s_4_6_7) xor (s_5_3_11) xor (s_5_4_10)); 
+   s_3_1_10 <=  (s_2_1_10) and ( (s_2_2_9) xor (s_2_3_8) xor (s_2_4_7) xor (s_2_5_6) xor (s_3_1_11) xor (s_3_2_10) xor (s_3_3_9) xor (s_3_4_8) xor (s_3_5_7) xor (s_4_2_11) xor (s_4_3_10) xor (s_4_4_9) xor (s_4_5_8) xor (s_4_6_7) xor (s_5_3_11) xor (s_5_4_10)); 
+   s_3_2_9 <=  (s_2_2_9) and ( (s_2_3_8) xor (s_2_4_7) xor (s_2_5_6) xor (s_3_1_11) xor (s_3_2_10) xor (s_3_3_9) xor (s_3_4_8) xor (s_3_5_7) xor (s_4_2_11) xor (s_4_3_10) xor (s_4_4_9) xor (s_4_5_8) xor (s_4_6_7) xor (s_5_3_11) xor (s_5_4_10)); 
+   s_3_3_8 <=  (s_2_3_8) and ( (s_2_4_7) xor (s_2_5_6) xor (s_3_1_11) xor (s_3_2_10) xor (s_3_3_9) xor (s_3_4_8) xor (s_3_5_7) xor (s_4_2_11) xor (s_4_3_10) xor (s_4_4_9) xor (s_4_5_8) xor (s_4_6_7) xor (s_5_3_11) xor (s_5_4_10)); 
+   s_3_4_7 <=  (s_2_4_7) and ( (s_2_5_6) xor (s_3_1_11) xor (s_3_2_10) xor (s_3_3_9) xor (s_3_4_8) xor (s_3_5_7) xor (s_4_2_11) xor (s_4_3_10) xor (s_4_4_9) xor (s_4_5_8) xor (s_4_6_7) xor (s_5_3_11) xor (s_5_4_10)); 
+   s_3_5_6 <=  (s_2_5_6) and ( (s_3_1_11) xor (s_3_2_10) xor (s_3_3_9) xor (s_3_4_8) xor (s_3_5_7) xor (s_4_2_11) xor (s_4_3_10) xor (s_4_4_9) xor (s_4_5_8) xor (s_4_6_7) xor (s_5_3_11) xor (s_5_4_10)); 
+   s_4_1_11 <=  (s_3_1_11) and ( (s_3_2_10) xor (s_3_3_9) xor (s_3_4_8) xor (s_3_5_7) xor (s_4_2_11) xor (s_4_3_10) xor (s_4_4_9) xor (s_4_5_8) xor (s_4_6_7) xor (s_5_3_11) xor (s_5_4_10)); 
+   s_4_2_10 <=  (s_3_2_10) and ( (s_3_3_9) xor (s_3_4_8) xor (s_3_5_7) xor (s_4_2_11) xor (s_4_3_10) xor (s_4_4_9) xor (s_4_5_8) xor (s_4_6_7) xor (s_5_3_11) xor (s_5_4_10)); 
+   s_4_3_9 <=  (s_3_3_9) and ( (s_3_4_8) xor (s_3_5_7) xor (s_4_2_11) xor (s_4_3_10) xor (s_4_4_9) xor (s_4_5_8) xor (s_4_6_7) xor (s_5_3_11) xor (s_5_4_10)); 
+   s_4_4_8 <=  (s_3_4_8) and ( (s_3_5_7) xor (s_4_2_11) xor (s_4_3_10) xor (s_4_4_9) xor (s_4_5_8) xor (s_4_6_7) xor (s_5_3_11) xor (s_5_4_10)); 
+   s_4_5_7 <=  (s_3_5_7) and ( (s_4_2_11) xor (s_4_3_10) xor (s_4_4_9) xor (s_4_5_8) xor (s_4_6_7) xor (s_5_3_11) xor (s_5_4_10)); 
+   s_5_2_11 <=  (s_4_2_11) and ( (s_4_3_10) xor (s_4_4_9) xor (s_4_5_8) xor (s_4_6_7) xor (s_5_3_11) xor (s_5_4_10)); 
+   s_5_3_10 <=  (s_4_3_10) and ( (s_4_4_9) xor (s_4_5_8) xor (s_4_6_7) xor (s_5_3_11) xor (s_5_4_10)); 
+   s_5_4_9 <=  (s_4_4_9) and ( (s_4_5_8) xor (s_4_6_7) xor (s_5_3_11) xor (s_5_4_10)); 
+   s_5_5_8 <=  (s_4_5_8) and ( (s_4_6_7) xor (s_5_3_11) xor (s_5_4_10)); 
+   s_5_6_7 <=  (s_4_6_7) and ( (s_5_3_11) xor (s_5_4_10)); 
+    s_1_1_7 <= x_reg(10) xor x_reg(4);
+
+    s_1_2_6 <= x_reg(9) xor x_reg(5);
+
+    s_1_3_5 <= x_reg(8) xor x_reg(6);
+
+   s_2_1_8 <=  (s_1_1_8) and ( (s_1_2_7) xor (s_1_3_6) xor (s_1_4_5) xor (s_2_1_9) xor (s_2_2_8) xor (s_2_3_7) xor (s_2_4_6) xor (s_3_1_10) xor (s_3_2_9) xor (s_3_3_8) xor (s_3_4_7) xor (s_3_5_6) xor (s_4_1_11) xor (s_4_2_10) xor (s_4_3_9) xor (s_4_4_8) xor (s_4_5_7) xor (s_5_2_11) xor (s_5_3_10) xor (s_5_4_9) xor (s_5_5_8) xor (s_5_6_7)); 
+   s_2_2_7 <=  (s_1_2_7) and ( (s_1_3_6) xor (s_1_4_5) xor (s_2_1_9) xor (s_2_2_8) xor (s_2_3_7) xor (s_2_4_6) xor (s_3_1_10) xor (s_3_2_9) xor (s_3_3_8) xor (s_3_4_7) xor (s_3_5_6) xor (s_4_1_11) xor (s_4_2_10) xor (s_4_3_9) xor (s_4_4_8) xor (s_4_5_7) xor (s_5_2_11) xor (s_5_3_10) xor (s_5_4_9) xor (s_5_5_8) xor (s_5_6_7)); 
+   s_2_3_6 <=  (s_1_3_6) and ( (s_1_4_5) xor (s_2_1_9) xor (s_2_2_8) xor (s_2_3_7) xor (s_2_4_6) xor (s_3_1_10) xor (s_3_2_9) xor (s_3_3_8) xor (s_3_4_7) xor (s_3_5_6) xor (s_4_1_11) xor (s_4_2_10) xor (s_4_3_9) xor (s_4_4_8) xor (s_4_5_7) xor (s_5_2_11) xor (s_5_3_10) xor (s_5_4_9) xor (s_5_5_8) xor (s_5_6_7)); 
+   s_2_4_5 <=  (s_1_4_5) and ( (s_2_1_9) xor (s_2_2_8) xor (s_2_3_7) xor (s_2_4_6) xor (s_3_1_10) xor (s_3_2_9) xor (s_3_3_8) xor (s_3_4_7) xor (s_3_5_6) xor (s_4_1_11) xor (s_4_2_10) xor (s_4_3_9) xor (s_4_4_8) xor (s_4_5_7) xor (s_5_2_11) xor (s_5_3_10) xor (s_5_4_9) xor (s_5_5_8) xor (s_5_6_7)); 
+   s_3_1_9 <=  (s_2_1_9) and ( (s_2_2_8) xor (s_2_3_7) xor (s_2_4_6) xor (s_3_1_10) xor (s_3_2_9) xor (s_3_3_8) xor (s_3_4_7) xor (s_3_5_6) xor (s_4_1_11) xor (s_4_2_10) xor (s_4_3_9) xor (s_4_4_8) xor (s_4_5_7) xor (s_5_2_11) xor (s_5_3_10) xor (s_5_4_9) xor (s_5_5_8) xor (s_5_6_7)); 
+   s_3_2_8 <=  (s_2_2_8) and ( (s_2_3_7) xor (s_2_4_6) xor (s_3_1_10) xor (s_3_2_9) xor (s_3_3_8) xor (s_3_4_7) xor (s_3_5_6) xor (s_4_1_11) xor (s_4_2_10) xor (s_4_3_9) xor (s_4_4_8) xor (s_4_5_7) xor (s_5_2_11) xor (s_5_3_10) xor (s_5_4_9) xor (s_5_5_8) xor (s_5_6_7)); 
+   s_3_3_7 <=  (s_2_3_7) and ( (s_2_4_6) xor (s_3_1_10) xor (s_3_2_9) xor (s_3_3_8) xor (s_3_4_7) xor (s_3_5_6) xor (s_4_1_11) xor (s_4_2_10) xor (s_4_3_9) xor (s_4_4_8) xor (s_4_5_7) xor (s_5_2_11) xor (s_5_3_10) xor (s_5_4_9) xor (s_5_5_8) xor (s_5_6_7)); 
+   s_3_4_6 <=  (s_2_4_6) and ( (s_3_1_10) xor (s_3_2_9) xor (s_3_3_8) xor (s_3_4_7) xor (s_3_5_6) xor (s_4_1_11) xor (s_4_2_10) xor (s_4_3_9) xor (s_4_4_8) xor (s_4_5_7) xor (s_5_2_11) xor (s_5_3_10) xor (s_5_4_9) xor (s_5_5_8) xor (s_5_6_7)); 
+   s_4_1_10 <=  (s_3_1_10) and ( (s_3_2_9) xor (s_3_3_8) xor (s_3_4_7) xor (s_3_5_6) xor (s_4_1_11) xor (s_4_2_10) xor (s_4_3_9) xor (s_4_4_8) xor (s_4_5_7) xor (s_5_2_11) xor (s_5_3_10) xor (s_5_4_9) xor (s_5_5_8) xor (s_5_6_7)); 
+   s_4_2_9 <=  (s_3_2_9) and ( (s_3_3_8) xor (s_3_4_7) xor (s_3_5_6) xor (s_4_1_11) xor (s_4_2_10) xor (s_4_3_9) xor (s_4_4_8) xor (s_4_5_7) xor (s_5_2_11) xor (s_5_3_10) xor (s_5_4_9) xor (s_5_5_8) xor (s_5_6_7)); 
+   s_4_3_8 <=  (s_3_3_8) and ( (s_3_4_7) xor (s_3_5_6) xor (s_4_1_11) xor (s_4_2_10) xor (s_4_3_9) xor (s_4_4_8) xor (s_4_5_7) xor (s_5_2_11) xor (s_5_3_10) xor (s_5_4_9) xor (s_5_5_8) xor (s_5_6_7)); 
+   s_4_4_7 <=  (s_3_4_7) and ( (s_3_5_6) xor (s_4_1_11) xor (s_4_2_10) xor (s_4_3_9) xor (s_4_4_8) xor (s_4_5_7) xor (s_5_2_11) xor (s_5_3_10) xor (s_5_4_9) xor (s_5_5_8) xor (s_5_6_7)); 
+   s_4_5_6 <=  (s_3_5_6) and ( (s_4_1_11) xor (s_4_2_10) xor (s_4_3_9) xor (s_4_4_8) xor (s_4_5_7) xor (s_5_2_11) xor (s_5_3_10) xor (s_5_4_9) xor (s_5_5_8) xor (s_5_6_7)); 
+   s_5_1_11 <=  (s_4_1_11) and ( (s_4_2_10) xor (s_4_3_9) xor (s_4_4_8) xor (s_4_5_7) xor (s_5_2_11) xor (s_5_3_10) xor (s_5_4_9) xor (s_5_5_8) xor (s_5_6_7)); 
+   s_5_2_10 <=  (s_4_2_10) and ( (s_4_3_9) xor (s_4_4_8) xor (s_4_5_7) xor (s_5_2_11) xor (s_5_3_10) xor (s_5_4_9) xor (s_5_5_8) xor (s_5_6_7)); 
+   s_5_3_9 <=  (s_4_3_9) and ( (s_4_4_8) xor (s_4_5_7) xor (s_5_2_11) xor (s_5_3_10) xor (s_5_4_9) xor (s_5_5_8) xor (s_5_6_7)); 
+   s_5_4_8 <=  (s_4_4_8) and ( (s_4_5_7) xor (s_5_2_11) xor (s_5_3_10) xor (s_5_4_9) xor (s_5_5_8) xor (s_5_6_7)); 
+   s_5_5_7 <=  (s_4_5_7) and ( (s_5_2_11) xor (s_5_3_10) xor (s_5_4_9) xor (s_5_5_8) xor (s_5_6_7)); 
+   s_6_2_11 <=  (s_5_2_11) and ( (s_5_3_10) xor (s_5_4_9) xor (s_5_5_8) xor (s_5_6_7)); 
+   s_6_3_10 <=  (s_5_3_10) and ( (s_5_4_9) xor (s_5_5_8) xor (s_5_6_7)); 
+   s_6_4_9 <=  (s_5_4_9) and ( (s_5_5_8) xor (s_5_6_7)); 
+    s_1_1_6 <= x_reg(10) xor x_reg(5);
+
+    s_1_2_5 <= x_reg(9) xor x_reg(6);
+
+    s_1_3_4 <= x_reg(8) xor x_reg(7);
+
+   s_2_1_7 <=  (s_1_1_7) and ( (s_1_2_6) xor (s_1_3_5) xor (s_2_1_8) xor (s_2_2_7) xor (s_2_3_6) xor (s_2_4_5) xor (s_3_1_9) xor (s_3_2_8) xor (s_3_3_7) xor (s_3_4_6) xor (s_4_1_10) xor (s_4_2_9) xor (s_4_3_8) xor (s_4_4_7) xor (s_4_5_6) xor (s_5_1_11) xor (s_5_2_10) xor (s_5_3_9) xor (s_5_4_8) xor (s_5_5_7) xor (s_6_2_11) xor (s_6_3_10) xor (s_6_4_9)); 
+   s_2_2_6 <=  (s_1_2_6) and ( (s_1_3_5) xor (s_2_1_8) xor (s_2_2_7) xor (s_2_3_6) xor (s_2_4_5) xor (s_3_1_9) xor (s_3_2_8) xor (s_3_3_7) xor (s_3_4_6) xor (s_4_1_10) xor (s_4_2_9) xor (s_4_3_8) xor (s_4_4_7) xor (s_4_5_6) xor (s_5_1_11) xor (s_5_2_10) xor (s_5_3_9) xor (s_5_4_8) xor (s_5_5_7) xor (s_6_2_11) xor (s_6_3_10) xor (s_6_4_9)); 
+   s_2_3_5 <=  (s_1_3_5) and ( (s_2_1_8) xor (s_2_2_7) xor (s_2_3_6) xor (s_2_4_5) xor (s_3_1_9) xor (s_3_2_8) xor (s_3_3_7) xor (s_3_4_6) xor (s_4_1_10) xor (s_4_2_9) xor (s_4_3_8) xor (s_4_4_7) xor (s_4_5_6) xor (s_5_1_11) xor (s_5_2_10) xor (s_5_3_9) xor (s_5_4_8) xor (s_5_5_7) xor (s_6_2_11) xor (s_6_3_10) xor (s_6_4_9)); 
+   s_3_1_8 <=  (s_2_1_8) and ( (s_2_2_7) xor (s_2_3_6) xor (s_2_4_5) xor (s_3_1_9) xor (s_3_2_8) xor (s_3_3_7) xor (s_3_4_6) xor (s_4_1_10) xor (s_4_2_9) xor (s_4_3_8) xor (s_4_4_7) xor (s_4_5_6) xor (s_5_1_11) xor (s_5_2_10) xor (s_5_3_9) xor (s_5_4_8) xor (s_5_5_7) xor (s_6_2_11) xor (s_6_3_10) xor (s_6_4_9)); 
+   s_3_2_7 <=  (s_2_2_7) and ( (s_2_3_6) xor (s_2_4_5) xor (s_3_1_9) xor (s_3_2_8) xor (s_3_3_7) xor (s_3_4_6) xor (s_4_1_10) xor (s_4_2_9) xor (s_4_3_8) xor (s_4_4_7) xor (s_4_5_6) xor (s_5_1_11) xor (s_5_2_10) xor (s_5_3_9) xor (s_5_4_8) xor (s_5_5_7) xor (s_6_2_11) xor (s_6_3_10) xor (s_6_4_9)); 
+   s_3_3_6 <=  (s_2_3_6) and ( (s_2_4_5) xor (s_3_1_9) xor (s_3_2_8) xor (s_3_3_7) xor (s_3_4_6) xor (s_4_1_10) xor (s_4_2_9) xor (s_4_3_8) xor (s_4_4_7) xor (s_4_5_6) xor (s_5_1_11) xor (s_5_2_10) xor (s_5_3_9) xor (s_5_4_8) xor (s_5_5_7) xor (s_6_2_11) xor (s_6_3_10) xor (s_6_4_9)); 
+   s_3_4_5 <=  (s_2_4_5) and ( (s_3_1_9) xor (s_3_2_8) xor (s_3_3_7) xor (s_3_4_6) xor (s_4_1_10) xor (s_4_2_9) xor (s_4_3_8) xor (s_4_4_7) xor (s_4_5_6) xor (s_5_1_11) xor (s_5_2_10) xor (s_5_3_9) xor (s_5_4_8) xor (s_5_5_7) xor (s_6_2_11) xor (s_6_3_10) xor (s_6_4_9)); 
+   s_4_1_9 <=  (s_3_1_9) and ( (s_3_2_8) xor (s_3_3_7) xor (s_3_4_6) xor (s_4_1_10) xor (s_4_2_9) xor (s_4_3_8) xor (s_4_4_7) xor (s_4_5_6) xor (s_5_1_11) xor (s_5_2_10) xor (s_5_3_9) xor (s_5_4_8) xor (s_5_5_7) xor (s_6_2_11) xor (s_6_3_10) xor (s_6_4_9)); 
+   s_4_2_8 <=  (s_3_2_8) and ( (s_3_3_7) xor (s_3_4_6) xor (s_4_1_10) xor (s_4_2_9) xor (s_4_3_8) xor (s_4_4_7) xor (s_4_5_6) xor (s_5_1_11) xor (s_5_2_10) xor (s_5_3_9) xor (s_5_4_8) xor (s_5_5_7) xor (s_6_2_11) xor (s_6_3_10) xor (s_6_4_9)); 
+   s_4_3_7 <=  (s_3_3_7) and ( (s_3_4_6) xor (s_4_1_10) xor (s_4_2_9) xor (s_4_3_8) xor (s_4_4_7) xor (s_4_5_6) xor (s_5_1_11) xor (s_5_2_10) xor (s_5_3_9) xor (s_5_4_8) xor (s_5_5_7) xor (s_6_2_11) xor (s_6_3_10) xor (s_6_4_9)); 
+   s_4_4_6 <=  (s_3_4_6) and ( (s_4_1_10) xor (s_4_2_9) xor (s_4_3_8) xor (s_4_4_7) xor (s_4_5_6) xor (s_5_1_11) xor (s_5_2_10) xor (s_5_3_9) xor (s_5_4_8) xor (s_5_5_7) xor (s_6_2_11) xor (s_6_3_10) xor (s_6_4_9)); 
+   s_5_1_10 <=  (s_4_1_10) and ( (s_4_2_9) xor (s_4_3_8) xor (s_4_4_7) xor (s_4_5_6) xor (s_5_1_11) xor (s_5_2_10) xor (s_5_3_9) xor (s_5_4_8) xor (s_5_5_7) xor (s_6_2_11) xor (s_6_3_10) xor (s_6_4_9)); 
+   s_5_2_9 <=  (s_4_2_9) and ( (s_4_3_8) xor (s_4_4_7) xor (s_4_5_6) xor (s_5_1_11) xor (s_5_2_10) xor (s_5_3_9) xor (s_5_4_8) xor (s_5_5_7) xor (s_6_2_11) xor (s_6_3_10) xor (s_6_4_9)); 
+   s_5_3_8 <=  (s_4_3_8) and ( (s_4_4_7) xor (s_4_5_6) xor (s_5_1_11) xor (s_5_2_10) xor (s_5_3_9) xor (s_5_4_8) xor (s_5_5_7) xor (s_6_2_11) xor (s_6_3_10) xor (s_6_4_9)); 
+   s_5_4_7 <=  (s_4_4_7) and ( (s_4_5_6) xor (s_5_1_11) xor (s_5_2_10) xor (s_5_3_9) xor (s_5_4_8) xor (s_5_5_7) xor (s_6_2_11) xor (s_6_3_10) xor (s_6_4_9)); 
+   s_5_5_6 <=  (s_4_5_6) and ( (s_5_1_11) xor (s_5_2_10) xor (s_5_3_9) xor (s_5_4_8) xor (s_5_5_7) xor (s_6_2_11) xor (s_6_3_10) xor (s_6_4_9)); 
+   s_6_1_11 <=  (s_5_1_11) and ( (s_5_2_10) xor (s_5_3_9) xor (s_5_4_8) xor (s_5_5_7) xor (s_6_2_11) xor (s_6_3_10) xor (s_6_4_9)); 
+   s_6_2_10 <=  (s_5_2_10) and ( (s_5_3_9) xor (s_5_4_8) xor (s_5_5_7) xor (s_6_2_11) xor (s_6_3_10) xor (s_6_4_9)); 
+   s_6_3_9 <=  (s_5_3_9) and ( (s_5_4_8) xor (s_5_5_7) xor (s_6_2_11) xor (s_6_3_10) xor (s_6_4_9)); 
+   s_6_4_8 <=  (s_5_4_8) and ( (s_5_5_7) xor (s_6_2_11) xor (s_6_3_10) xor (s_6_4_9)); 
+   s_6_5_7 <=  (s_5_5_7) and ( (s_6_2_11) xor (s_6_3_10) xor (s_6_4_9)); 
+   s_7_2_11 <=  (s_6_2_11) and ( (s_6_3_10) xor (s_6_4_9)); 
+    s_1_1_5 <= x_reg(10) xor x_reg(6);
+
+    s_1_2_4 <= x_reg(9) xor x_reg(7);
+
+   s_2_1_6 <=  (s_1_1_6) and ( (s_1_2_5) xor (s_1_3_4) xor (s_2_1_7) xor (s_2_2_6) xor (s_2_3_5) xor (s_3_1_8) xor (s_3_2_7) xor (s_3_3_6) xor (s_3_4_5) xor (s_4_1_9) xor (s_4_2_8) xor (s_4_3_7) xor (s_4_4_6) xor (s_5_1_10) xor (s_5_2_9) xor (s_5_3_8) xor (s_5_4_7) xor (s_5_5_6) xor (s_6_1_11) xor (s_6_2_10) xor (s_6_3_9) xor (s_6_4_8) xor (s_6_5_7) xor (s_7_2_11));
+   s_2_2_5 <=  (s_1_2_5) and ( (s_1_3_4) xor (s_2_1_7) xor (s_2_2_6) xor (s_2_3_5) xor (s_3_1_8) xor (s_3_2_7) xor (s_3_3_6) xor (s_3_4_5) xor (s_4_1_9) xor (s_4_2_8) xor (s_4_3_7) xor (s_4_4_6) xor (s_5_1_10) xor (s_5_2_9) xor (s_5_3_8) xor (s_5_4_7) xor (s_5_5_6) xor (s_6_1_11) xor (s_6_2_10) xor (s_6_3_9) xor (s_6_4_8) xor (s_6_5_7) xor (s_7_2_11));
+   s_2_3_4 <=  (s_1_3_4) and ( (s_2_1_7) xor (s_2_2_6) xor (s_2_3_5) xor (s_3_1_8) xor (s_3_2_7) xor (s_3_3_6) xor (s_3_4_5) xor (s_4_1_9) xor (s_4_2_8) xor (s_4_3_7) xor (s_4_4_6) xor (s_5_1_10) xor (s_5_2_9) xor (s_5_3_8) xor (s_5_4_7) xor (s_5_5_6) xor (s_6_1_11) xor (s_6_2_10) xor (s_6_3_9) xor (s_6_4_8) xor (s_6_5_7) xor (s_7_2_11));
+   s_3_1_7 <=  (s_2_1_7) and ( (s_2_2_6) xor (s_2_3_5) xor (s_3_1_8) xor (s_3_2_7) xor (s_3_3_6) xor (s_3_4_5) xor (s_4_1_9) xor (s_4_2_8) xor (s_4_3_7) xor (s_4_4_6) xor (s_5_1_10) xor (s_5_2_9) xor (s_5_3_8) xor (s_5_4_7) xor (s_5_5_6) xor (s_6_1_11) xor (s_6_2_10) xor (s_6_3_9) xor (s_6_4_8) xor (s_6_5_7) xor (s_7_2_11));
+   s_3_2_6 <=  (s_2_2_6) and ( (s_2_3_5) xor (s_3_1_8) xor (s_3_2_7) xor (s_3_3_6) xor (s_3_4_5) xor (s_4_1_9) xor (s_4_2_8) xor (s_4_3_7) xor (s_4_4_6) xor (s_5_1_10) xor (s_5_2_9) xor (s_5_3_8) xor (s_5_4_7) xor (s_5_5_6) xor (s_6_1_11) xor (s_6_2_10) xor (s_6_3_9) xor (s_6_4_8) xor (s_6_5_7) xor (s_7_2_11));
+   s_3_3_5 <=  (s_2_3_5) and ( (s_3_1_8) xor (s_3_2_7) xor (s_3_3_6) xor (s_3_4_5) xor (s_4_1_9) xor (s_4_2_8) xor (s_4_3_7) xor (s_4_4_6) xor (s_5_1_10) xor (s_5_2_9) xor (s_5_3_8) xor (s_5_4_7) xor (s_5_5_6) xor (s_6_1_11) xor (s_6_2_10) xor (s_6_3_9) xor (s_6_4_8) xor (s_6_5_7) xor (s_7_2_11));
+   s_4_1_8 <=  (s_3_1_8) and ( (s_3_2_7) xor (s_3_3_6) xor (s_3_4_5) xor (s_4_1_9) xor (s_4_2_8) xor (s_4_3_7) xor (s_4_4_6) xor (s_5_1_10) xor (s_5_2_9) xor (s_5_3_8) xor (s_5_4_7) xor (s_5_5_6) xor (s_6_1_11) xor (s_6_2_10) xor (s_6_3_9) xor (s_6_4_8) xor (s_6_5_7) xor (s_7_2_11));
+   s_4_2_7 <=  (s_3_2_7) and ( (s_3_3_6) xor (s_3_4_5) xor (s_4_1_9) xor (s_4_2_8) xor (s_4_3_7) xor (s_4_4_6) xor (s_5_1_10) xor (s_5_2_9) xor (s_5_3_8) xor (s_5_4_7) xor (s_5_5_6) xor (s_6_1_11) xor (s_6_2_10) xor (s_6_3_9) xor (s_6_4_8) xor (s_6_5_7) xor (s_7_2_11));
+   s_4_3_6 <=  (s_3_3_6) and ( (s_3_4_5) xor (s_4_1_9) xor (s_4_2_8) xor (s_4_3_7) xor (s_4_4_6) xor (s_5_1_10) xor (s_5_2_9) xor (s_5_3_8) xor (s_5_4_7) xor (s_5_5_6) xor (s_6_1_11) xor (s_6_2_10) xor (s_6_3_9) xor (s_6_4_8) xor (s_6_5_7) xor (s_7_2_11));
+   s_4_4_5 <=  (s_3_4_5) and ( (s_4_1_9) xor (s_4_2_8) xor (s_4_3_7) xor (s_4_4_6) xor (s_5_1_10) xor (s_5_2_9) xor (s_5_3_8) xor (s_5_4_7) xor (s_5_5_6) xor (s_6_1_11) xor (s_6_2_10) xor (s_6_3_9) xor (s_6_4_8) xor (s_6_5_7) xor (s_7_2_11));
+   s_5_1_9 <=  (s_4_1_9) and ( (s_4_2_8) xor (s_4_3_7) xor (s_4_4_6) xor (s_5_1_10) xor (s_5_2_9) xor (s_5_3_8) xor (s_5_4_7) xor (s_5_5_6) xor (s_6_1_11) xor (s_6_2_10) xor (s_6_3_9) xor (s_6_4_8) xor (s_6_5_7) xor (s_7_2_11));
+   s_5_2_8 <=  (s_4_2_8) and ( (s_4_3_7) xor (s_4_4_6) xor (s_5_1_10) xor (s_5_2_9) xor (s_5_3_8) xor (s_5_4_7) xor (s_5_5_6) xor (s_6_1_11) xor (s_6_2_10) xor (s_6_3_9) xor (s_6_4_8) xor (s_6_5_7) xor (s_7_2_11));
+   s_5_3_7 <=  (s_4_3_7) and ( (s_4_4_6) xor (s_5_1_10) xor (s_5_2_9) xor (s_5_3_8) xor (s_5_4_7) xor (s_5_5_6) xor (s_6_1_11) xor (s_6_2_10) xor (s_6_3_9) xor (s_6_4_8) xor (s_6_5_7) xor (s_7_2_11));
+   s_5_4_6 <=  (s_4_4_6) and ( (s_5_1_10) xor (s_5_2_9) xor (s_5_3_8) xor (s_5_4_7) xor (s_5_5_6) xor (s_6_1_11) xor (s_6_2_10) xor (s_6_3_9) xor (s_6_4_8) xor (s_6_5_7) xor (s_7_2_11));
+   s_6_1_10 <=  (s_5_1_10) and ( (s_5_2_9) xor (s_5_3_8) xor (s_5_4_7) xor (s_5_5_6) xor (s_6_1_11) xor (s_6_2_10) xor (s_6_3_9) xor (s_6_4_8) xor (s_6_5_7) xor (s_7_2_11));
+   s_6_2_9 <=  (s_5_2_9) and ( (s_5_3_8) xor (s_5_4_7) xor (s_5_5_6) xor (s_6_1_11) xor (s_6_2_10) xor (s_6_3_9) xor (s_6_4_8) xor (s_6_5_7) xor (s_7_2_11));
+   s_6_3_8 <=  (s_5_3_8) and ( (s_5_4_7) xor (s_5_5_6) xor (s_6_1_11) xor (s_6_2_10) xor (s_6_3_9) xor (s_6_4_8) xor (s_6_5_7) xor (s_7_2_11));
+   s_6_4_7 <=  (s_5_4_7) and ( (s_5_5_6) xor (s_6_1_11) xor (s_6_2_10) xor (s_6_3_9) xor (s_6_4_8) xor (s_6_5_7) xor (s_7_2_11));
+   s_6_5_6 <=  (s_5_5_6) and ( (s_6_1_11) xor (s_6_2_10) xor (s_6_3_9) xor (s_6_4_8) xor (s_6_5_7) xor (s_7_2_11));
+   s_7_1_11 <=  (s_6_1_11) and ( (s_6_2_10) xor (s_6_3_9) xor (s_6_4_8) xor (s_6_5_7) xor (s_7_2_11));
+   s_7_2_10 <=  (s_6_2_10) and ( (s_6_3_9) xor (s_6_4_8) xor (s_6_5_7) xor (s_7_2_11));
+   s_7_3_9 <=  (s_6_3_9) and ( (s_6_4_8) xor (s_6_5_7) xor (s_7_2_11));
+   s_7_4_8 <=  (s_6_4_8) and ( (s_6_5_7) xor (s_7_2_11));
+    s_1_1_4 <= x_reg(10) xor x_reg(7);
+
+    s_1_2_3 <= x_reg(9) xor x_reg(8);
+
+   s_2_1_5 <=  (s_1_1_5) and ( (s_1_2_4) xor (s_2_1_6) xor (s_2_2_5) xor (s_2_3_4) xor (s_3_1_7) xor (s_3_2_6) xor (s_3_3_5) xor (s_4_1_8) xor (s_4_2_7) xor (s_4_3_6) xor (s_4_4_5) xor (s_5_1_9) xor (s_5_2_8) xor (s_5_3_7) xor (s_5_4_6) xor (s_6_1_10) xor (s_6_2_9) xor (s_6_3_8) xor (s_6_4_7) xor (s_6_5_6) xor (s_7_1_11) xor (s_7_2_10) xor (s_7_3_9) xor (s_7_4_8));
+   s_2_2_4 <=  (s_1_2_4) and ( (s_2_1_6) xor (s_2_2_5) xor (s_2_3_4) xor (s_3_1_7) xor (s_3_2_6) xor (s_3_3_5) xor (s_4_1_8) xor (s_4_2_7) xor (s_4_3_6) xor (s_4_4_5) xor (s_5_1_9) xor (s_5_2_8) xor (s_5_3_7) xor (s_5_4_6) xor (s_6_1_10) xor (s_6_2_9) xor (s_6_3_8) xor (s_6_4_7) xor (s_6_5_6) xor (s_7_1_11) xor (s_7_2_10) xor (s_7_3_9) xor (s_7_4_8));
+   s_3_1_6 <=  (s_2_1_6) and ( (s_2_2_5) xor (s_2_3_4) xor (s_3_1_7) xor (s_3_2_6) xor (s_3_3_5) xor (s_4_1_8) xor (s_4_2_7) xor (s_4_3_6) xor (s_4_4_5) xor (s_5_1_9) xor (s_5_2_8) xor (s_5_3_7) xor (s_5_4_6) xor (s_6_1_10) xor (s_6_2_9) xor (s_6_3_8) xor (s_6_4_7) xor (s_6_5_6) xor (s_7_1_11) xor (s_7_2_10) xor (s_7_3_9) xor (s_7_4_8));
+   s_3_2_5 <=  (s_2_2_5) and ( (s_2_3_4) xor (s_3_1_7) xor (s_3_2_6) xor (s_3_3_5) xor (s_4_1_8) xor (s_4_2_7) xor (s_4_3_6) xor (s_4_4_5) xor (s_5_1_9) xor (s_5_2_8) xor (s_5_3_7) xor (s_5_4_6) xor (s_6_1_10) xor (s_6_2_9) xor (s_6_3_8) xor (s_6_4_7) xor (s_6_5_6) xor (s_7_1_11) xor (s_7_2_10) xor (s_7_3_9) xor (s_7_4_8));
+   s_3_3_4 <=  (s_2_3_4) and ( (s_3_1_7) xor (s_3_2_6) xor (s_3_3_5) xor (s_4_1_8) xor (s_4_2_7) xor (s_4_3_6) xor (s_4_4_5) xor (s_5_1_9) xor (s_5_2_8) xor (s_5_3_7) xor (s_5_4_6) xor (s_6_1_10) xor (s_6_2_9) xor (s_6_3_8) xor (s_6_4_7) xor (s_6_5_6) xor (s_7_1_11) xor (s_7_2_10) xor (s_7_3_9) xor (s_7_4_8));
+   s_4_1_7 <=  (s_3_1_7) and ( (s_3_2_6) xor (s_3_3_5) xor (s_4_1_8) xor (s_4_2_7) xor (s_4_3_6) xor (s_4_4_5) xor (s_5_1_9) xor (s_5_2_8) xor (s_5_3_7) xor (s_5_4_6) xor (s_6_1_10) xor (s_6_2_9) xor (s_6_3_8) xor (s_6_4_7) xor (s_6_5_6) xor (s_7_1_11) xor (s_7_2_10) xor (s_7_3_9) xor (s_7_4_8));
+   s_4_2_6 <=  (s_3_2_6) and ( (s_3_3_5) xor (s_4_1_8) xor (s_4_2_7) xor (s_4_3_6) xor (s_4_4_5) xor (s_5_1_9) xor (s_5_2_8) xor (s_5_3_7) xor (s_5_4_6) xor (s_6_1_10) xor (s_6_2_9) xor (s_6_3_8) xor (s_6_4_7) xor (s_6_5_6) xor (s_7_1_11) xor (s_7_2_10) xor (s_7_3_9) xor (s_7_4_8));
+   s_4_3_5 <=  (s_3_3_5) and ( (s_4_1_8) xor (s_4_2_7) xor (s_4_3_6) xor (s_4_4_5) xor (s_5_1_9) xor (s_5_2_8) xor (s_5_3_7) xor (s_5_4_6) xor (s_6_1_10) xor (s_6_2_9) xor (s_6_3_8) xor (s_6_4_7) xor (s_6_5_6) xor (s_7_1_11) xor (s_7_2_10) xor (s_7_3_9) xor (s_7_4_8));
+   s_5_1_8 <=  (s_4_1_8) and ( (s_4_2_7) xor (s_4_3_6) xor (s_4_4_5) xor (s_5_1_9) xor (s_5_2_8) xor (s_5_3_7) xor (s_5_4_6) xor (s_6_1_10) xor (s_6_2_9) xor (s_6_3_8) xor (s_6_4_7) xor (s_6_5_6) xor (s_7_1_11) xor (s_7_2_10) xor (s_7_3_9) xor (s_7_4_8));
+   s_5_2_7 <=  (s_4_2_7) and ( (s_4_3_6) xor (s_4_4_5) xor (s_5_1_9) xor (s_5_2_8) xor (s_5_3_7) xor (s_5_4_6) xor (s_6_1_10) xor (s_6_2_9) xor (s_6_3_8) xor (s_6_4_7) xor (s_6_5_6) xor (s_7_1_11) xor (s_7_2_10) xor (s_7_3_9) xor (s_7_4_8));
+   s_5_3_6 <=  (s_4_3_6) and ( (s_4_4_5) xor (s_5_1_9) xor (s_5_2_8) xor (s_5_3_7) xor (s_5_4_6) xor (s_6_1_10) xor (s_6_2_9) xor (s_6_3_8) xor (s_6_4_7) xor (s_6_5_6) xor (s_7_1_11) xor (s_7_2_10) xor (s_7_3_9) xor (s_7_4_8));
+   s_5_4_5 <=  (s_4_4_5) and ( (s_5_1_9) xor (s_5_2_8) xor (s_5_3_7) xor (s_5_4_6) xor (s_6_1_10) xor (s_6_2_9) xor (s_6_3_8) xor (s_6_4_7) xor (s_6_5_6) xor (s_7_1_11) xor (s_7_2_10) xor (s_7_3_9) xor (s_7_4_8));
+   s_6_1_9 <=  (s_5_1_9) and ( (s_5_2_8) xor (s_5_3_7) xor (s_5_4_6) xor (s_6_1_10) xor (s_6_2_9) xor (s_6_3_8) xor (s_6_4_7) xor (s_6_5_6) xor (s_7_1_11) xor (s_7_2_10) xor (s_7_3_9) xor (s_7_4_8));
+   s_6_2_8 <=  (s_5_2_8) and ( (s_5_3_7) xor (s_5_4_6) xor (s_6_1_10) xor (s_6_2_9) xor (s_6_3_8) xor (s_6_4_7) xor (s_6_5_6) xor (s_7_1_11) xor (s_7_2_10) xor (s_7_3_9) xor (s_7_4_8));
+   s_6_3_7 <=  (s_5_3_7) and ( (s_5_4_6) xor (s_6_1_10) xor (s_6_2_9) xor (s_6_3_8) xor (s_6_4_7) xor (s_6_5_6) xor (s_7_1_11) xor (s_7_2_10) xor (s_7_3_9) xor (s_7_4_8));
+   s_6_4_6 <=  (s_5_4_6) and ( (s_6_1_10) xor (s_6_2_9) xor (s_6_3_8) xor (s_6_4_7) xor (s_6_5_6) xor (s_7_1_11) xor (s_7_2_10) xor (s_7_3_9) xor (s_7_4_8));
+   s_7_1_10 <=  (s_6_1_10) and ( (s_6_2_9) xor (s_6_3_8) xor (s_6_4_7) xor (s_6_5_6) xor (s_7_1_11) xor (s_7_2_10) xor (s_7_3_9) xor (s_7_4_8));
+   s_7_2_9 <=  (s_6_2_9) and ( (s_6_3_8) xor (s_6_4_7) xor (s_6_5_6) xor (s_7_1_11) xor (s_7_2_10) xor (s_7_3_9) xor (s_7_4_8));
+   s_7_3_8 <=  (s_6_3_8) and ( (s_6_4_7) xor (s_6_5_6) xor (s_7_1_11) xor (s_7_2_10) xor (s_7_3_9) xor (s_7_4_8));
+   s_7_4_7 <=  (s_6_4_7) and ( (s_6_5_6) xor (s_7_1_11) xor (s_7_2_10) xor (s_7_3_9) xor (s_7_4_8));
+   s_7_5_6 <=  (s_6_5_6) and ( (s_7_1_11) xor (s_7_2_10) xor (s_7_3_9) xor (s_7_4_8));
+   s_8_1_11 <=  (s_7_1_11) and ( (s_7_2_10) xor (s_7_3_9) xor (s_7_4_8));
+   s_8_2_10 <=  (s_7_2_10) and ( (s_7_3_9) xor (s_7_4_8));
+    s_1_1_3 <= x_reg(10) xor x_reg(8);
+
+   s_2_1_4 <=  (s_1_1_4) and ( (s_1_2_3) xor (s_2_1_5) xor (s_2_2_4) xor (s_3_1_6) xor (s_3_2_5) xor (s_3_3_4) xor (s_4_1_7) xor (s_4_2_6) xor (s_4_3_5) xor (s_5_1_8) xor (s_5_2_7) xor (s_5_3_6) xor (s_5_4_5) xor (s_6_1_9) xor (s_6_2_8) xor (s_6_3_7) xor (s_6_4_6) xor (s_7_1_10) xor (s_7_2_9) xor (s_7_3_8) xor (s_7_4_7) xor (s_7_5_6) xor (s_8_1_11) xor (s_8_2_10));
+   s_2_2_3 <=  (s_1_2_3) and ( (s_2_1_5) xor (s_2_2_4) xor (s_3_1_6) xor (s_3_2_5) xor (s_3_3_4) xor (s_4_1_7) xor (s_4_2_6) xor (s_4_3_5) xor (s_5_1_8) xor (s_5_2_7) xor (s_5_3_6) xor (s_5_4_5) xor (s_6_1_9) xor (s_6_2_8) xor (s_6_3_7) xor (s_6_4_6) xor (s_7_1_10) xor (s_7_2_9) xor (s_7_3_8) xor (s_7_4_7) xor (s_7_5_6) xor (s_8_1_11) xor (s_8_2_10));
+   s_3_1_5 <=  (s_2_1_5) and ( (s_2_2_4) xor (s_3_1_6) xor (s_3_2_5) xor (s_3_3_4) xor (s_4_1_7) xor (s_4_2_6) xor (s_4_3_5) xor (s_5_1_8) xor (s_5_2_7) xor (s_5_3_6) xor (s_5_4_5) xor (s_6_1_9) xor (s_6_2_8) xor (s_6_3_7) xor (s_6_4_6) xor (s_7_1_10) xor (s_7_2_9) xor (s_7_3_8) xor (s_7_4_7) xor (s_7_5_6) xor (s_8_1_11) xor (s_8_2_10));
+   s_3_2_4 <=  (s_2_2_4) and ( (s_3_1_6) xor (s_3_2_5) xor (s_3_3_4) xor (s_4_1_7) xor (s_4_2_6) xor (s_4_3_5) xor (s_5_1_8) xor (s_5_2_7) xor (s_5_3_6) xor (s_5_4_5) xor (s_6_1_9) xor (s_6_2_8) xor (s_6_3_7) xor (s_6_4_6) xor (s_7_1_10) xor (s_7_2_9) xor (s_7_3_8) xor (s_7_4_7) xor (s_7_5_6) xor (s_8_1_11) xor (s_8_2_10));
+   s_4_1_6 <=  (s_3_1_6) and ( (s_3_2_5) xor (s_3_3_4) xor (s_4_1_7) xor (s_4_2_6) xor (s_4_3_5) xor (s_5_1_8) xor (s_5_2_7) xor (s_5_3_6) xor (s_5_4_5) xor (s_6_1_9) xor (s_6_2_8) xor (s_6_3_7) xor (s_6_4_6) xor (s_7_1_10) xor (s_7_2_9) xor (s_7_3_8) xor (s_7_4_7) xor (s_7_5_6) xor (s_8_1_11) xor (s_8_2_10));
+   s_4_2_5 <=  (s_3_2_5) and ( (s_3_3_4) xor (s_4_1_7) xor (s_4_2_6) xor (s_4_3_5) xor (s_5_1_8) xor (s_5_2_7) xor (s_5_3_6) xor (s_5_4_5) xor (s_6_1_9) xor (s_6_2_8) xor (s_6_3_7) xor (s_6_4_6) xor (s_7_1_10) xor (s_7_2_9) xor (s_7_3_8) xor (s_7_4_7) xor (s_7_5_6) xor (s_8_1_11) xor (s_8_2_10));
+   s_4_3_4 <=  (s_3_3_4) and ( (s_4_1_7) xor (s_4_2_6) xor (s_4_3_5) xor (s_5_1_8) xor (s_5_2_7) xor (s_5_3_6) xor (s_5_4_5) xor (s_6_1_9) xor (s_6_2_8) xor (s_6_3_7) xor (s_6_4_6) xor (s_7_1_10) xor (s_7_2_9) xor (s_7_3_8) xor (s_7_4_7) xor (s_7_5_6) xor (s_8_1_11) xor (s_8_2_10));
+   s_5_1_7 <=  (s_4_1_7) and ( (s_4_2_6) xor (s_4_3_5) xor (s_5_1_8) xor (s_5_2_7) xor (s_5_3_6) xor (s_5_4_5) xor (s_6_1_9) xor (s_6_2_8) xor (s_6_3_7) xor (s_6_4_6) xor (s_7_1_10) xor (s_7_2_9) xor (s_7_3_8) xor (s_7_4_7) xor (s_7_5_6) xor (s_8_1_11) xor (s_8_2_10));
+   s_5_2_6 <=  (s_4_2_6) and ( (s_4_3_5) xor (s_5_1_8) xor (s_5_2_7) xor (s_5_3_6) xor (s_5_4_5) xor (s_6_1_9) xor (s_6_2_8) xor (s_6_3_7) xor (s_6_4_6) xor (s_7_1_10) xor (s_7_2_9) xor (s_7_3_8) xor (s_7_4_7) xor (s_7_5_6) xor (s_8_1_11) xor (s_8_2_10));
+   s_5_3_5 <=  (s_4_3_5) and ( (s_5_1_8) xor (s_5_2_7) xor (s_5_3_6) xor (s_5_4_5) xor (s_6_1_9) xor (s_6_2_8) xor (s_6_3_7) xor (s_6_4_6) xor (s_7_1_10) xor (s_7_2_9) xor (s_7_3_8) xor (s_7_4_7) xor (s_7_5_6) xor (s_8_1_11) xor (s_8_2_10));
+   s_6_1_8 <=  (s_5_1_8) and ( (s_5_2_7) xor (s_5_3_6) xor (s_5_4_5) xor (s_6_1_9) xor (s_6_2_8) xor (s_6_3_7) xor (s_6_4_6) xor (s_7_1_10) xor (s_7_2_9) xor (s_7_3_8) xor (s_7_4_7) xor (s_7_5_6) xor (s_8_1_11) xor (s_8_2_10));
+   s_6_2_7 <=  (s_5_2_7) and ( (s_5_3_6) xor (s_5_4_5) xor (s_6_1_9) xor (s_6_2_8) xor (s_6_3_7) xor (s_6_4_6) xor (s_7_1_10) xor (s_7_2_9) xor (s_7_3_8) xor (s_7_4_7) xor (s_7_5_6) xor (s_8_1_11) xor (s_8_2_10));
+   s_6_3_6 <=  (s_5_3_6) and ( (s_5_4_5) xor (s_6_1_9) xor (s_6_2_8) xor (s_6_3_7) xor (s_6_4_6) xor (s_7_1_10) xor (s_7_2_9) xor (s_7_3_8) xor (s_7_4_7) xor (s_7_5_6) xor (s_8_1_11) xor (s_8_2_10));
+   s_6_4_5 <=  (s_5_4_5) and ( (s_6_1_9) xor (s_6_2_8) xor (s_6_3_7) xor (s_6_4_6) xor (s_7_1_10) xor (s_7_2_9) xor (s_7_3_8) xor (s_7_4_7) xor (s_7_5_6) xor (s_8_1_11) xor (s_8_2_10));
+   s_7_1_9 <=  (s_6_1_9) and ( (s_6_2_8) xor (s_6_3_7) xor (s_6_4_6) xor (s_7_1_10) xor (s_7_2_9) xor (s_7_3_8) xor (s_7_4_7) xor (s_7_5_6) xor (s_8_1_11) xor (s_8_2_10));
+   s_7_2_8 <=  (s_6_2_8) and ( (s_6_3_7) xor (s_6_4_6) xor (s_7_1_10) xor (s_7_2_9) xor (s_7_3_8) xor (s_7_4_7) xor (s_7_5_6) xor (s_8_1_11) xor (s_8_2_10));
+   s_7_3_7 <=  (s_6_3_7) and ( (s_6_4_6) xor (s_7_1_10) xor (s_7_2_9) xor (s_7_3_8) xor (s_7_4_7) xor (s_7_5_6) xor (s_8_1_11) xor (s_8_2_10));
+   s_7_4_6 <=  (s_6_4_6) and ( (s_7_1_10) xor (s_7_2_9) xor (s_7_3_8) xor (s_7_4_7) xor (s_7_5_6) xor (s_8_1_11) xor (s_8_2_10));
+   s_8_1_10 <=  (s_7_1_10) and ( (s_7_2_9) xor (s_7_3_8) xor (s_7_4_7) xor (s_7_5_6) xor (s_8_1_11) xor (s_8_2_10));
+   s_8_2_9 <=  (s_7_2_9) and ( (s_7_3_8) xor (s_7_4_7) xor (s_7_5_6) xor (s_8_1_11) xor (s_8_2_10));
+   s_8_3_8 <=  (s_7_3_8) and ( (s_7_4_7) xor (s_7_5_6) xor (s_8_1_11) xor (s_8_2_10));
+   s_8_4_7 <=  (s_7_4_7) and ( (s_7_5_6) xor (s_8_1_11) xor (s_8_2_10));
+   s_8_5_6 <=  (s_7_5_6) and ( (s_8_1_11) xor (s_8_2_10));
+    s_1_1_2 <= x_reg(10) xor x_reg(9);
+
+   s_2_1_3 <=  (s_1_1_3) and ( (s_2_1_4) xor (s_2_2_3) xor (s_3_1_5) xor (s_3_2_4) xor (s_4_1_6) xor (s_4_2_5) xor (s_4_3_4) xor (s_5_1_7) xor (s_5_2_6) xor (s_5_3_5) xor (s_6_1_8) xor (s_6_2_7) xor (s_6_3_6) xor (s_6_4_5) xor (s_7_1_9) xor (s_7_2_8) xor (s_7_3_7) xor (s_7_4_6) xor (s_8_1_10) xor (s_8_2_9) xor (s_8_3_8) xor (s_8_4_7) xor (s_8_5_6)); 
+   s_3_1_4 <=  (s_2_1_4) and ( (s_2_2_3) xor (s_3_1_5) xor (s_3_2_4) xor (s_4_1_6) xor (s_4_2_5) xor (s_4_3_4) xor (s_5_1_7) xor (s_5_2_6) xor (s_5_3_5) xor (s_6_1_8) xor (s_6_2_7) xor (s_6_3_6) xor (s_6_4_5) xor (s_7_1_9) xor (s_7_2_8) xor (s_7_3_7) xor (s_7_4_6) xor (s_8_1_10) xor (s_8_2_9) xor (s_8_3_8) xor (s_8_4_7) xor (s_8_5_6)); 
+   s_3_2_3 <=  (s_2_2_3) and ( (s_3_1_5) xor (s_3_2_4) xor (s_4_1_6) xor (s_4_2_5) xor (s_4_3_4) xor (s_5_1_7) xor (s_5_2_6) xor (s_5_3_5) xor (s_6_1_8) xor (s_6_2_7) xor (s_6_3_6) xor (s_6_4_5) xor (s_7_1_9) xor (s_7_2_8) xor (s_7_3_7) xor (s_7_4_6) xor (s_8_1_10) xor (s_8_2_9) xor (s_8_3_8) xor (s_8_4_7) xor (s_8_5_6)); 
+   s_4_1_5 <=  (s_3_1_5) and ( (s_3_2_4) xor (s_4_1_6) xor (s_4_2_5) xor (s_4_3_4) xor (s_5_1_7) xor (s_5_2_6) xor (s_5_3_5) xor (s_6_1_8) xor (s_6_2_7) xor (s_6_3_6) xor (s_6_4_5) xor (s_7_1_9) xor (s_7_2_8) xor (s_7_3_7) xor (s_7_4_6) xor (s_8_1_10) xor (s_8_2_9) xor (s_8_3_8) xor (s_8_4_7) xor (s_8_5_6)); 
+   s_4_2_4 <=  (s_3_2_4) and ( (s_4_1_6) xor (s_4_2_5) xor (s_4_3_4) xor (s_5_1_7) xor (s_5_2_6) xor (s_5_3_5) xor (s_6_1_8) xor (s_6_2_7) xor (s_6_3_6) xor (s_6_4_5) xor (s_7_1_9) xor (s_7_2_8) xor (s_7_3_7) xor (s_7_4_6) xor (s_8_1_10) xor (s_8_2_9) xor (s_8_3_8) xor (s_8_4_7) xor (s_8_5_6)); 
+   s_5_1_6 <=  (s_4_1_6) and ( (s_4_2_5) xor (s_4_3_4) xor (s_5_1_7) xor (s_5_2_6) xor (s_5_3_5) xor (s_6_1_8) xor (s_6_2_7) xor (s_6_3_6) xor (s_6_4_5) xor (s_7_1_9) xor (s_7_2_8) xor (s_7_3_7) xor (s_7_4_6) xor (s_8_1_10) xor (s_8_2_9) xor (s_8_3_8) xor (s_8_4_7) xor (s_8_5_6)); 
+   s_5_2_5 <=  (s_4_2_5) and ( (s_4_3_4) xor (s_5_1_7) xor (s_5_2_6) xor (s_5_3_5) xor (s_6_1_8) xor (s_6_2_7) xor (s_6_3_6) xor (s_6_4_5) xor (s_7_1_9) xor (s_7_2_8) xor (s_7_3_7) xor (s_7_4_6) xor (s_8_1_10) xor (s_8_2_9) xor (s_8_3_8) xor (s_8_4_7) xor (s_8_5_6)); 
+   s_5_3_4 <=  (s_4_3_4) and ( (s_5_1_7) xor (s_5_2_6) xor (s_5_3_5) xor (s_6_1_8) xor (s_6_2_7) xor (s_6_3_6) xor (s_6_4_5) xor (s_7_1_9) xor (s_7_2_8) xor (s_7_3_7) xor (s_7_4_6) xor (s_8_1_10) xor (s_8_2_9) xor (s_8_3_8) xor (s_8_4_7) xor (s_8_5_6)); 
+   s_6_1_7 <=  (s_5_1_7) and ( (s_5_2_6) xor (s_5_3_5) xor (s_6_1_8) xor (s_6_2_7) xor (s_6_3_6) xor (s_6_4_5) xor (s_7_1_9) xor (s_7_2_8) xor (s_7_3_7) xor (s_7_4_6) xor (s_8_1_10) xor (s_8_2_9) xor (s_8_3_8) xor (s_8_4_7) xor (s_8_5_6)); 
+   s_6_2_6 <=  (s_5_2_6) and ( (s_5_3_5) xor (s_6_1_8) xor (s_6_2_7) xor (s_6_3_6) xor (s_6_4_5) xor (s_7_1_9) xor (s_7_2_8) xor (s_7_3_7) xor (s_7_4_6) xor (s_8_1_10) xor (s_8_2_9) xor (s_8_3_8) xor (s_8_4_7) xor (s_8_5_6)); 
+   s_6_3_5 <=  (s_5_3_5) and ( (s_6_1_8) xor (s_6_2_7) xor (s_6_3_6) xor (s_6_4_5) xor (s_7_1_9) xor (s_7_2_8) xor (s_7_3_7) xor (s_7_4_6) xor (s_8_1_10) xor (s_8_2_9) xor (s_8_3_8) xor (s_8_4_7) xor (s_8_5_6)); 
+   s_7_1_8 <=  (s_6_1_8) and ( (s_6_2_7) xor (s_6_3_6) xor (s_6_4_5) xor (s_7_1_9) xor (s_7_2_8) xor (s_7_3_7) xor (s_7_4_6) xor (s_8_1_10) xor (s_8_2_9) xor (s_8_3_8) xor (s_8_4_7) xor (s_8_5_6)); 
+   s_7_2_7 <=  (s_6_2_7) and ( (s_6_3_6) xor (s_6_4_5) xor (s_7_1_9) xor (s_7_2_8) xor (s_7_3_7) xor (s_7_4_6) xor (s_8_1_10) xor (s_8_2_9) xor (s_8_3_8) xor (s_8_4_7) xor (s_8_5_6)); 
+   s_7_3_6 <=  (s_6_3_6) and ( (s_6_4_5) xor (s_7_1_9) xor (s_7_2_8) xor (s_7_3_7) xor (s_7_4_6) xor (s_8_1_10) xor (s_8_2_9) xor (s_8_3_8) xor (s_8_4_7) xor (s_8_5_6)); 
+   s_7_4_5 <=  (s_6_4_5) and ( (s_7_1_9) xor (s_7_2_8) xor (s_7_3_7) xor (s_7_4_6) xor (s_8_1_10) xor (s_8_2_9) xor (s_8_3_8) xor (s_8_4_7) xor (s_8_5_6)); 
+   s_8_1_9 <=  (s_7_1_9) and ( (s_7_2_8) xor (s_7_3_7) xor (s_7_4_6) xor (s_8_1_10) xor (s_8_2_9) xor (s_8_3_8) xor (s_8_4_7) xor (s_8_5_6)); 
+   s_8_2_8 <=  (s_7_2_8) and ( (s_7_3_7) xor (s_7_4_6) xor (s_8_1_10) xor (s_8_2_9) xor (s_8_3_8) xor (s_8_4_7) xor (s_8_5_6)); 
+   s_8_3_7 <=  (s_7_3_7) and ( (s_7_4_6) xor (s_8_1_10) xor (s_8_2_9) xor (s_8_3_8) xor (s_8_4_7) xor (s_8_5_6)); 
+   s_8_4_6 <=  (s_7_4_6) and ( (s_8_1_10) xor (s_8_2_9) xor (s_8_3_8) xor (s_8_4_7) xor (s_8_5_6)); 
+   s_9_1_10 <=  (s_8_1_10) and ( (s_8_2_9) xor (s_8_3_8) xor (s_8_4_7) xor (s_8_5_6)); 
+   s_9_2_9 <=  (s_8_2_9) and ( (s_8_3_8) xor (s_8_4_7) xor (s_8_5_6)); 
+   s_9_3_8 <=  (s_8_3_8) and ( (s_8_4_7) xor (s_8_5_6)); 
+    x_next(10)<= ((s_1_1_2) xor (s_2_1_3) xor (s_3_1_4) xor (s_3_2_3) xor (s_4_1_5) xor (s_4_2_4) xor (s_5_1_6) xor (s_5_2_5) xor (s_5_3_4) xor (s_6_1_7) xor (s_6_2_6) xor (s_6_3_5) xor (s_7_1_8) xor (s_7_2_7) xor (s_7_3_6) xor (s_7_4_5) xor (s_8_1_9) xor (s_8_2_8) xor (s_8_3_7) xor (s_8_4_6) xor (s_9_1_10) xor (s_9_2_9) xor (s_9_3_8)); 
+    x_next(9)<= ((s_1_1_3) xor (s_2_1_4) xor (s_2_2_3) xor (s_3_1_5) xor (s_3_2_4) xor (s_4_1_6) xor (s_4_2_5) xor (s_4_3_4) xor (s_5_1_7) xor (s_5_2_6) xor (s_5_3_5) xor (s_6_1_8) xor (s_6_2_7) xor (s_6_3_6) xor (s_6_4_5) xor (s_7_1_9) xor (s_7_2_8) xor (s_7_3_7) xor (s_7_4_6) xor (s_8_1_10) xor (s_8_2_9) xor (s_8_3_8) xor (s_8_4_7) xor (s_8_5_6)); 
+    x_next(8)<= ((s_1_1_4) xor (s_1_2_3) xor (s_2_1_5) xor (s_2_2_4) xor (s_3_1_6) xor (s_3_2_5) xor (s_3_3_4) xor (s_4_1_7) xor (s_4_2_6) xor (s_4_3_5) xor (s_5_1_8) xor (s_5_2_7) xor (s_5_3_6) xor (s_5_4_5) xor (s_6_1_9) xor (s_6_2_8) xor (s_6_3_7) xor (s_6_4_6) xor (s_7_1_10) xor (s_7_2_9) xor (s_7_3_8) xor (s_7_4_7) xor (s_7_5_6) xor (s_8_1_11) xor (s_8_2_10));
+    x_next(7)<= ((s_1_1_5) xor (s_1_2_4) xor (s_2_1_6) xor (s_2_2_5) xor (s_2_3_4) xor (s_3_1_7) xor (s_3_2_6) xor (s_3_3_5) xor (s_4_1_8) xor (s_4_2_7) xor (s_4_3_6) xor (s_4_4_5) xor (s_5_1_9) xor (s_5_2_8) xor (s_5_3_7) xor (s_5_4_6) xor (s_6_1_10) xor (s_6_2_9) xor (s_6_3_8) xor (s_6_4_7) xor (s_6_5_6) xor (s_7_1_11) xor (s_7_2_10) xor (s_7_3_9) xor (s_7_4_8));
+    x_next(6)<= ((s_1_1_6) xor (s_1_2_5) xor (s_1_3_4) xor (s_2_1_7) xor (s_2_2_6) xor (s_2_3_5) xor (s_3_1_8) xor (s_3_2_7) xor (s_3_3_6) xor (s_3_4_5) xor (s_4_1_9) xor (s_4_2_8) xor (s_4_3_7) xor (s_4_4_6) xor (s_5_1_10) xor (s_5_2_9) xor (s_5_3_8) xor (s_5_4_7) xor (s_5_5_6) xor (s_6_1_11) xor (s_6_2_10) xor (s_6_3_9) xor (s_6_4_8) xor (s_6_5_7) xor (s_7_2_11));
+    x_next(5)<= ((s_1_1_7) xor (s_1_2_6) xor (s_1_3_5) xor (s_2_1_8) xor (s_2_2_7) xor (s_2_3_6) xor (s_2_4_5) xor (s_3_1_9) xor (s_3_2_8) xor (s_3_3_7) xor (s_3_4_6) xor (s_4_1_10) xor (s_4_2_9) xor (s_4_3_8) xor (s_4_4_7) xor (s_4_5_6) xor (s_5_1_11) xor (s_5_2_10) xor (s_5_3_9) xor (s_5_4_8) xor (s_5_5_7) xor (s_6_2_11) xor (s_6_3_10) xor (s_6_4_9)); 
+    x_next(4)<= ((s_1_1_8) xor (s_1_2_7) xor (s_1_3_6) xor (s_1_4_5) xor (s_2_1_9) xor (s_2_2_8) xor (s_2_3_7) xor (s_2_4_6) xor (s_3_1_10) xor (s_3_2_9) xor (s_3_3_8) xor (s_3_4_7) xor (s_3_5_6) xor (s_4_1_11) xor (s_4_2_10) xor (s_4_3_9) xor (s_4_4_8) xor (s_4_5_7) xor (s_5_2_11) xor (s_5_3_10) xor (s_5_4_9) xor (s_5_5_8) xor (s_5_6_7)); 
+    x_next(3)<= ((s_1_1_9) xor (s_1_2_8) xor (s_1_3_7) xor (s_1_4_6) xor (s_2_1_10) xor (s_2_2_9) xor (s_2_3_8) xor (s_2_4_7) xor (s_2_5_6) xor (s_3_1_11) xor (s_3_2_10) xor (s_3_3_9) xor (s_3_4_8) xor (s_3_5_7) xor (s_4_2_11) xor (s_4_3_10) xor (s_4_4_9) xor (s_4_5_8) xor (s_4_6_7) xor (s_5_3_11) xor (s_5_4_10)); 
+    x_next(2)<= ((s_1_1_10) xor (s_1_2_9) xor (s_1_3_8) xor (s_1_4_7) xor (s_1_5_6) xor (s_2_1_11) xor (s_2_2_10) xor (s_2_3_9) xor (s_2_4_8) xor (s_2_5_7) xor (s_3_2_11) xor (s_3_3_10) xor (s_3_4_9) xor (s_3_5_8) xor (s_3_6_7) xor (s_4_3_11) xor (s_4_4_10) xor (s_4_5_9) xor (s_4_6_8)); 
+    x_next(1)<= ((s_1_1_11) xor (s_1_2_10) xor (s_1_3_9) xor (s_1_4_8) xor (s_1_5_7) xor (s_2_2_11) xor (s_2_3_10) xor (s_2_4_9) xor (s_2_5_8) xor (s_2_6_7) xor (s_3_3_11) xor (s_3_4_10) xor (s_3_5_9) xor (s_3_6_8) xor (s_4_4_11) xor (s_4_5_10)); 
+    x_next(0)<= ((s_1_2_11) xor (s_1_3_10) xor (s_1_4_9) xor (s_1_5_8) xor (s_1_6_7) xor (s_2_3_11) xor (s_2_4_10) xor (s_2_5_9) xor (s_2_6_8) xor (s_3_4_11) xor (s_3_5_10) xor (s_3_6_9) xor (s_3_7_8)); 
+  process(clk)
+  begin
+    if rising_edge(clk) then
+      if rst = '1' then
+        x_reg <= (others => '0');
+      elsif load = '1' then
+        x_reg <= a;
+      elsif en = '1' then
+        x_reg <= x_next;
+      end if;
+    end if;
+  end process;
+
+  s <= x_reg;
+end rtl;
